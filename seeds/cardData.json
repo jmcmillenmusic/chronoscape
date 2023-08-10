@@ -1,0 +1,17 @@
+[ 
+  {
+    "description": "Your character wakes up and realizes that they are in a game. What do you do?",
+    "answerChoice1": "Wake up and make some breakfast",
+    "answerChoice2": "Get your shotgun and look out the window",
+    "answerChoice3": "Stoke the fire and listen to the birds in the trees"
+  },
+
+  {
+    "description": "You realize that you forgot to buy eggs from the store yesterday. Whatcha gonna do?",
+    "answerChoice1": "Wake up and make some breakfast",
+    "answerChoice2": "Make a quick run to the store",
+    "answerChoice3": "Take the shotgun out back to the chickens in your coops"
+  }
+
+]
+
