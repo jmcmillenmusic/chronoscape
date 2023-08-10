@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
         //Below loads all cards and shows the description and answer choices
         // const cardData = await Card.findAll({attributes: ['description', 'answerChoice1', 'answerChoice2', 'answerChoice3']});
 
-        const cardData = await ContinueCard.findByPk(1, {attributes: ['description', 'continueButton']});
+        const cardData = await ContinueCard.findByPk(1, {attributes: ['description']});
 
         //Show this for now
         res.status(200).json(cardData);
