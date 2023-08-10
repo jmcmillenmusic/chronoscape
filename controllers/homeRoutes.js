@@ -7,13 +7,14 @@ router.get('/', async (req, res) => {
         //Below loads all cards and shows the description and answer choices
         // const cardData = await Card.findAll({attributes: ['description', 'answerChoice1', 'answerChoice2', 'answerChoice3']});
 
-        const cardData = await ContinueCard.findByPk(1, {attributes: ['description']});
+        const continueCardData = await ContinueCard.findByPk(1, {attributes: ['title', 'description']});
 
         //Show this for now
-        res.status(200).json(cardData);
+        // res.status(200).json(cardData);
         //When handlebars are set up, can do something like the below code to render homepage
-        // const cards = cardData.map((card) => card.get({ plain: true }));
-        // res.render('homepage', {cards});
+        const continueCard = continueCardData.get({ plain: true }); 
+        // console.log("LOOK AT THIS" + cardData.title + cardData.description);
+        res.render('homepage', { continueCard }); // Pass the continueCard data to the view
         
     }
     catch(err)
