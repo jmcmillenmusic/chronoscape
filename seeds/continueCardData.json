@@ -1,10 +1,12 @@
 [ 
   {
-    "description": "Prompt: You have just been told that a multiversal traveler, threatens the balance of space-time.\n\n You are a seasoned agent to the Multiverse Protector Force (MPF).\n\n Your mission is to bring the traveler to the MPF Prison, and stop his plans before they destroy space-time."
+    "title":  "Prompt: You have just been told that a multi-versal traveler, threatens the balance of space-time.",
+    "description": "You are a seasoned agent to the Multiverse Protector Force (MPF).\n\n Your mission is to bring the traveler to the MPF Prison, and stop his plans before they destroy space-time."
   },
 
   {
-    "description": "You stand before a portal wearing your MPG specialized gadget.\n\n You have been given several time periods, and locations to check out. \n\n These locations are experiencing fluctuating anomalies that have been caused by the traveler."
+    "title": "You stand before a portal wearing your MPG specialized gadget.",
+    "description": "You have been given several time periods, and locations to check out. \n\n These locations are experiencing fluctuating anomalies that have been caused by the traveler."
   }
 
 ]

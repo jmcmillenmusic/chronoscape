@@ -11,6 +11,10 @@ ContinueCard.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    title: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+    },
     description: {
       type: DataTypes.TEXT,
       allowNull: false,
