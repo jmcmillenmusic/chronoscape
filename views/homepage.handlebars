@@ -1,8 +1,31 @@
 
-<div class="card w-50 text-center">
+{{!-- <div class="card w-50 text-center">
   <div class="card-body">
     <h5 class="card-title">{{continueCard.title}} </h5>
     <p class="card-text">{{continueCard.description}}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a id="continueButton" class="btn btn-primary">Next Card</a>
+  </div>
+</div> --}}
+
+{{!-- Create a div with the id cardContainer that we'll reference in the JS --}}
+
+<div id="cardContainer" class="card w-50 text-center"></div>
+
+{{!-- This should auto populate when the page starts, and when you click the next button, the current one should disappear and the next one should appear --}}
+
+</div>
+
+{{!-- {{#each cardData}}
+<div class="card w-50 text-center">
+  <div class="card-body">
+    <h5 class="card-title">{{this.description}} </h5>
+    <p class="card-text">{{this.answerChoice1}}</p>
+    <p class="card-text">{{this.answerChoice2}}</p>
+    <p class="card-text">{{this.answerChoice3}}</p>
+    <a href="/api/cards/{{this.id}}" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
+{{/each}} --}}
+
+
+<script src="/js/homepage.js"></script>
