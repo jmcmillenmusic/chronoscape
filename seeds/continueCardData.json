@@ -1,12 +1,37 @@
 [ 
   {
-    "title":  "Prompt: You have just been told that a multi-versal traveler, threatens the balance of space-time.",
-    "description": "You are a seasoned agent to the Multiverse Protector Force (MPF).\n\n Your mission is to bring the traveler to the MPF Prison, and stop his plans before they destroy space-time."
+    "title":  "Welcome to the Multiverse Protection Force, or MPF, for short.",
+    "description": "As an agent of MPF, you will be tasked with protecting the multiverse from any threats that will try to harm it. This means ensuring that events happen as they should, and apprehending anyone who may be considered a universal threat.\n\n Welcome agent {{user_name}}! You are a seasoned MPF agent that has successfully removed numerous threats to the multiverse. As a result, the MPF trusts you to handle one of their biggest threats yet. Stopping a former MPF Agent from destroying the Space-Time Continuum.\n\nYour mission objective in simple, find the Multiversal Traveler, apprehend them, and bring them back to MPF. Alive."
   },
 
   {
-    "title": "You stand before a portal wearing your MPG specialized gadget.",
-    "description": "You have been given several time periods, and locations to check out. \n\n These locations are experiencing fluctuating anomalies that have been caused by the traveler."
+    "title": "You grab your special MPF gadget from your locker, and head to the teleportation room.",
+    "description": "You have been given several time periods, and locations to check out. \n\n These locations are experiencing fluctuating anomalies that have been caused by the traveler. \nYour MPF Gadget is a Mk.1. \nMk.1 MPF Gadgets are accurate, but cause anomalies within the specific time period, if you're there for too long. To circumvent this, the gadget will automatically open a portal and force you back to the main hub when 5 minutes have been reached within a specific universe. Since you are experienced, 5 minutes is more than enough time to get the necessary information needed to find the traveler. Now it's only a matter of where to look..."
+  },
+
+  {
+    "title": "Berlin, 1948 (Wolfenstein)",
+    "description": "Stepping through the portal, the surroundings gradually materialized before me. Just as the landscape fully unfolds, I was jolted back almost instinctively, narrowly avoiding being crushed by a colossal 'Zerstörer' unit. Emerging right behind this imposing mechanical behemoth were a squadron of Panzerhund robots, their metal forms glinting ominously in the light. And then, looming even larger on the scene, was an immense tank proudly bearing the flag of Nazi Germany. It seems like you've landed in the middle of a parade. \nAs interesting as it would be to witness Germany's technological prowess, your objective remains clear. A quick glance at your gadget reveals a time rapidly counting down to four minutes. Every second counts. That traveler has to be here somewhere."
+  },
+  
+  {
+    "title": "Night City, 2077",
+    "description": "Before even stepping through the portal, you catch a whiff of a very putrid smell. From your many travels, you're able to deduce that this order can only come from one source, an industrialized metropolis. Holding your breath, you allow the portal to do it's magic. \nAs the area materializes around me, the colorful lights of Night City bursts onto my view. As I attempt to collect my bearings, I notice the surrouding area is packed with people. Whether it's pedestrians taking seats at food stands, or simply walking to their next destination, navigation through this bustling area, proves challenging.\nAfter a bit of time, you manage to sift your way through the crowd, and the once maze-like streets start to seem a little bit more navigable. A quick look at your gadget reorients your thoughts. Time is ticking, time to find that traveler."
+  },
+  
+  {
+    "title": "Gotham, 2022",
+    "description": "Dangerous. It's the only word sitting on your brain as you punch in the coordinates for Gotham City. It's not your first visit, and certainly won't be your last... \nGotham, while useful for agents gathering information, is also just as deadly. The people of gotham can be ruthless, and one wrong interaction can get you in a pool of your own blood fast. Usually it's healthier to not interact with people as an MPF agent, but there are times where talking to people are the only choice we have in the matter. Hopefully this isn't one of those times.\nAs you arrive, the city seems a little more peaceful than normal. The streets are quiet, and there doesn't seem to be any immediate crime happening in your area. It's a perfect opportunity to get work done without drawing much attention. Let's see if we can pinpoint that traveler."
+  },
+
+  {
+    "title": "Eisenwald Prison",
+    "description": "A Nazi Germany prison definitely won't take kindly to a multiversal traveler entering their premises, but us agents will go anywhere to find what we need, and I'm sure that the other traveler would've most definitely gone through here.\nAs you enter, you notice that the prison is weirdly empty. Not a single prison guard, and all the cells are empty... Do prison inmates also celebrate the parade too? \nYou take more steps into the prison, and a lit computer console catches your view. Looking into this console, you attempt to maybe find a guest list, or something similar, but you find something even more ominous... An entry for the MPF Overseer...? What was the Overseer doing here...? Before you can find anymore information, a portal opens behind you, sucking you into it. When the view clears, you find yourself back in the teleportation room."
+  },
+
+  {
+    "title": "Volkshalle",
+    "description": "This place is known as the official residence of the Fuhrer,but we aren't here to see the Fuhrer at all. The Volkshalle is also known as a meeting hall for Nazi Germany, and MPF agents always find good information in places where leaders meet. As you enter the building, you get a lot of weird looks from Nazi Soldiers, but they don't seem to pay too much attention to you. It looks like civilians can also enter this place relatively freely. You take some time to check the area, but come up with nothing...? \n You were sure that this place would hold some valuable information but it looks like the Volkshalle has turned out to be a big sham! You start up the portal yourself, feeling a little disappointed at your discovery. Hopefully all of my excursions don't end up like this..."
   }
 
 ]

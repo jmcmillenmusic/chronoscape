@@ -1,16 +1,16 @@
 [ 
   {
-    "description": "Your character wakes up and realizes that they are in a game. What do you do?",
-    "answerChoice1": "Wake up and make some breakfast",
-    "answerChoice2": "Get your shotgun and look out the window",
-    "answerChoice3": "Stoke the fire and listen to the birds in the trees"
+    "description": "The teleportation ring shines brightly as you approach it. \nWhere would you like to go?",
+    "answerChoice1": "Berlin, 1948 (Wolfenstein)",
+    "answerChoice2": "Night City, 2077",
+    "answerChoice3": "Gotham, 2022"
   },
 
   {
-    "description": "You realize that you forgot to buy eggs from the store yesterday. Whatcha gonna do?",
-    "answerChoice1": "Wake up and make some breakfast",
-    "answerChoice2": "Make a quick run to the store",
-    "answerChoice3": "Take the shotgun out back to the chickens in your coops"
+    "description": "Where do you want to explore?",
+    "answerChoice1": "Eisenwald Prison",
+    "answerChoice2": "Volkshalle",
+    "answerChoice3": "Reich Chancellery"
   }
 
 ]
