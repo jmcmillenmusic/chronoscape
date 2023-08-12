@@ -1,13 +1,69 @@
 [ 
   {
-    "description": "The teleportation ring shines brightly as you approach it. \nWhere would you like to go?",
+    "description": "1. The teleportation ring shines brightly as you approach it. \nWhere would you like to go?",
     "answerChoice1": "Berlin, 1948 (Wolfenstein)",
     "answerChoice2": "Night City, 2077",
     "answerChoice3": "Gotham, 2022"
   },
 
   {
-    "description": "Where do you want to explore?",
+    "description": "2. Where do you want to explore?",
+    "answerChoice1": "Eisenwald Prison",
+    "answerChoice2": "Volkshalle",
+    "answerChoice3": "Reich Chancellery"
+  },
+
+  {
+    "description": "3. Where do you want to explore?",
+    "answerChoice1": "Eisenwald Prison",
+    "answerChoice2": "Volkshalle",
+    "answerChoice3": "Reich Chancellery"
+  },
+
+  {
+    "description": "4. Where do you want to explore?",
+    "answerChoice1": "Eisenwald Prison",
+    "answerChoice2": "Volkshalle",
+    "answerChoice3": "Reich Chancellery"
+  },
+
+  {
+    "description": "5. Where do you want to explore?",
+    "answerChoice1": "Eisenwald Prison",
+    "answerChoice2": "Volkshalle",
+    "answerChoice3": "Reich Chancellery"
+  },
+
+  {
+    "description": "6. Where do you want to explore?",
+    "answerChoice1": "Eisenwald Prison",
+    "answerChoice2": "Volkshalle",
+    "answerChoice3": "Reich Chancellery"
+  },
+
+  {
+    "description": "7. Where do you want to explore?",
+    "answerChoice1": "Eisenwald Prison",
+    "answerChoice2": "Volkshalle",
+    "answerChoice3": "Reich Chancellery"
+  },
+
+  {
+    "description": "8. Where do you want to explore?",
+    "answerChoice1": "Eisenwald Prison",
+    "answerChoice2": "Volkshalle",
+    "answerChoice3": "Reich Chancellery"
+  },
+
+  {
+    "description": "9. Where do you want to explore?",
+    "answerChoice1": "Eisenwald Prison",
+    "answerChoice2": "Volkshalle",
+    "answerChoice3": "Reich Chancellery"
+  },
+
+  {
+    "description": "10. Where do you want to explore?",
     "answerChoice1": "Eisenwald Prison",
     "answerChoice2": "Volkshalle",
     "answerChoice3": "Reich Chancellery"

@@ -35,6 +35,17 @@ router.get('/api/cards/:id', async (req, res) => {
     }
 });
 
+router.get('/api/continuecards/:id', async (req, res) => {
+    try {
+        const cardId = req.params.id;
+        const cardData = await ContinueCard.findByPk(cardId, { raw: true, attributes: ['title', 'description'] });
+
+        res.json(cardData); // Return the card data as JSON
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 
 
