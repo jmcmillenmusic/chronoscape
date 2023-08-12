@@ -1,10 +1,13 @@
 {{!-- Metadata for front-end and connections of stylesheets --}}
+
 <head>
-  <meta charset="UTF-8">
-  <title>Chronoscape</title>
-  {{!-- <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css"> --}}
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Multiverse Traveller</title>
+    {{!--
+    <link rel="stylesheet" href="/css/jass.css">
+    <link rel="stylesheet" href="/css/style.css"> --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 
 
@@ -12,16 +15,37 @@
     <div class=" min-vh-100 min-vw-100 text-bg-dark p-3">
         <img id="background-image" src=""></img>
         <header class="text-center text-bg-primary p-3">
-            <h1>
-                Chronoscape
-            </h1>
+            <section>
+                <h1 class="text">
+                    Chronoscape
+                </h1>
+            </section>
+            {{!-- <script type="application/javascript" src="/Users/ken/Downloads/anime-master/lib/anime.min.js"></script>
+            <script>
+                const text = document.querySelector('.text');
+                text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>")
+
+                anime.timeline({
+                    loop: true
+                })
+
+                    .add({
+                        targets: '.text span',
+                        translateY: [-600, 0],
+                        scale: [10, 1],
+                        opacity: [0, 1],
+                        easing: "easeOutExpo",
+                        duration: 1500
+                    })
+            </script> --}}
         </header>
         <main class="container container-fluid min-vh-100 min-vw-100 d-flex justify-content-center align-items-center">
-        {{{ body }}}
+            {{{ body }}}
         </main>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

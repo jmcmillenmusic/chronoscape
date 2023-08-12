@@ -32,19 +32,19 @@
   {
     "description": "Where do you want to explore?",
     "answerChoice1": "Eden Club",
-    "answerChoice2 ": "Cyberlife Warehouse",
+    "answerChoice2": "Cyberlife Warehouse",
     "answerChoice3": "CyberLife Tower"
   },
   {
     "description": "Where do you want to explore?",
     "answerChoice1": "Hokage Mansion",
-    "answerChoice2 ": "Ichiraku Ramen",
+    "answerChoice2": "Ichiraku Ramen",
     "answerChoice3": "Hokage Rock"
   },
   {
     "description": "Where do you want to explore?",
     "answerChoice1": "Googolplex Mall",
-    "answerChoice2 ": "Doofenshmirtz Evil Incorporated",
+    "answerChoice2": "Doofenshmirtz Evil Incorporated",
     "answerChoice3": "Danville Arena"
   },  
   {
@@ -56,19 +56,19 @@
   {
     "description": "Where do you want to explore?",
     "answerChoice1": "Offices",
-    "answerChoice2 ": "Warehouse",
+    "answerChoice2": "Warehouse",
     "answerChoice3": "TVA Court"
   },  
   {
     "description": "Where do you want to explore?",
     "answerChoice1": "Time Control Room",
-    "answerChoice2 ": "Offices",
+    "answerChoice2": "Offices",
     "answerChoice3": "Handler's Office"
   },  
   {
     "description": "Where do you want to explore?",
     "answerChoice1": "Teleportation Room",
-    "answerChoice2 ": "Mess Hall",
+    "answerChoice2": "Mess Hall",
     "answerChoice3": "Overseer Office"
   }
 
