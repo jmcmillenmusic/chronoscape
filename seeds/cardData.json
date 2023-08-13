@@ -55,14 +55,14 @@
   },
   {
     "description": "Where do you want to explore?",
-    "answerChoice1": "Offices",
+    "answerChoice1": "TVA Offices",
     "answerChoice2": "Warehouse",
     "answerChoice3": "TVA Court"
   },  
   {
     "description": "Where do you want to explore?",
     "answerChoice1": "Time Control Room",
-    "answerChoice2": "Offices",
+    "answerChoice2": "Temps Offices",
     "answerChoice3": "Handler's Office"
   },  
   {

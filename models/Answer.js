@@ -22,6 +22,14 @@ Answer.init(
           key: 'id',
         }
       },
+      answer_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        references: {
+          model: 'answer',
+          key: 'id',
+        }
+      },
       location_id: {
         type: DataTypes.INTEGER,
         allowNull: false,

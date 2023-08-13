@@ -14,10 +14,21 @@ Questions.hasMany(Answers, {
     onDelete: 'CASCADE'
   });
 
+  Answers.hasMany(Answers, {
+    foreignKey: 'answer_id',
+    onDelete: 'CASCADE'
+  });
+
+  Answers.belongsTo(Answers, {
+    foreignKey: 'answer_id',
+    onDelete: 'CASCADE'
+  });
+
   Answers.hasOne(Location, {
     foreignKey: 'location_id',
     onDelete: 'CASCADE'
   });
+  
   
   Location.belongsTo(Answers, {
     foreignKey: 'location_id',
