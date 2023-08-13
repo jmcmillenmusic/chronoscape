@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Location extends Model {}
+class Location extends Model { }
 
 Location.init(
   {
@@ -15,9 +15,17 @@ Location.init(
       type: DataTypes.TEXT,
     },
     locationData: {
-        type: DataTypes.TEXT,
+      type: DataTypes.TEXT,
+    },
+    answer_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'answer',
+        key: 'id',
       }
     },
+  },
   {
     sequelize,
     freezeTableName: true,
