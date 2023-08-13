@@ -11,21 +11,21 @@ Card.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    title: {
+      type: DataTypes.TEXT,
+    },
     description: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.TEXT,
     },
     answerChoice1: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.TEXT,
+
     },
     answerChoice2: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.TEXT,
     },
     answerChoice3: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.TEXT,
     }
     },
   {
