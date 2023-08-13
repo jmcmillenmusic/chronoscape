@@ -24,4 +24,4 @@ Questions.hasMany(Answers, {
     onDelete: 'CASCADE'
   });
   
-  module.exports = { Card, ContinueCard, Questions, Answers };
+  module.exports = { Card, ContinueCard, Questions, Answers, Locations };
