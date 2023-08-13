@@ -1,4 +1,3 @@
-
 const cardContainer = document.getElementById("cardContainer");
 let currentCardIndex = 0;
 
@@ -130,4 +129,3 @@ async function displayContinueCard(cardIndex) {
 
 // Initial card display
 fetchAndDisplayNextCard();
-
