@@ -198,12 +198,12 @@
     "answerChoice": "Mess Hall",
     "question_id": 2,
     "parent_answer_id": 27,
-    "location_id": 35
+    "location_id": 34
   },
   {
     "answerChoice": "Overseers Office",
     "question_id": 2,
     "parent_answer_id": 27,
-    "location_id": 36
+    "location_id": 34
   }
 ]

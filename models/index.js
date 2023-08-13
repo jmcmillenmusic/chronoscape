@@ -1,38 +1,38 @@
 const Card = require('./Card');
 const ContinueCard = require('./ContinueCard');
-const Questions = require('./Question');
-const Answers = require('./Answer');
+const Question = require('./Question'); // Updated model name
+const Answer = require('./Answer'); // Updated model name
 const Location = require('./Location');
 
-Questions.hasMany(Answers, {
-    foreignKey: 'question_id',
-    onDelete: 'CASCADE'
+Question.hasMany(Answer, {
+  foreignKey: 'question_id',
+  onDelete: 'CASCADE',
 });
 
-Answers.belongsTo(Questions, {
-    foreignKey: 'question_id',
-    onDelete: 'CASCADE'
+Answer.belongsTo(Question, {
+  foreignKey: 'question_id',
+  onDelete: 'CASCADE',
 });
 
-Answers.hasMany(Answers, {
-    foreignKey: 'parent_answer_id', // Rename to reflect parent-child relationship
-    onDelete: 'CASCADE',
-    as: 'ChildAnswers' // Define an alias for the child answers
+Answer.hasMany(Answer, {
+  foreignKey: 'parent_answer_id',
+  onDelete: 'CASCADE',
+  as: 'ChildAnswers',
 });
 
-Answers.belongsTo(Answers, {
-    foreignKey: 'parent_answer_id', // Rename to reflect parent-child relationship
-    onDelete: 'CASCADE'
+Answer.belongsTo(Answer, {
+  foreignKey: 'parent_answer_id',
+  onDelete: 'CASCADE',
 });
 
-Answers.hasOne(Location, {
-    foreignKey: 'answer_id', // Use answer_id as the foreign key in Location
-    onDelete: 'CASCADE'
+Answer.hasOne(Location, {
+  foreignKey: 'answer_id',
+  onDelete: 'CASCADE',
 });
 
-Location.belongsTo(Answers, {
-    foreignKey: 'answer_id', // Use answer_id as the foreign key in Location
-    onDelete: 'CASCADE'
+Location.belongsTo(Answer, {
+  foreignKey: 'answer_id',
+  onDelete: 'CASCADE',
 });
 
-module.exports = { Card, ContinueCard, Questions, Answers, Location }; // Fix typo: Location, not Locations
+module.exports = { Card, ContinueCard, Question, Answer, Location };
