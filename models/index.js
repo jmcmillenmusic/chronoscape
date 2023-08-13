@@ -2,7 +2,7 @@ const Card = require('./Card');
 const ContinueCard = require('./ContinueCard');
 const Questions = require('./Question');
 const Answers = require('./Answer');
-const Locations = require('./Location');
+const Location = require('./Location');
 
 Questions.hasMany(Answers, {
     foreignKey: 'question_id',
@@ -14,13 +14,13 @@ Questions.hasMany(Answers, {
     onDelete: 'CASCADE'
   });
 
-  Answers.hasMany(Locations, {
-    foreignKey: 'answer_id',
+  Answers.hasOne(Location, {
+    foreignKey: 'location_id',
     onDelete: 'CASCADE'
   });
   
-  Answers.belongsTo(Questions, {
-    foreignKey: 'question_id',
+  Location.belongsTo(Answers, {
+    foreignKey: 'location_id',
     onDelete: 'CASCADE'
   });
   

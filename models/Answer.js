@@ -11,20 +11,22 @@ Answer.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    answerchoice1: {
+    answerchoice: {
       type: DataTypes.TEXT,
     },
-    answerchoice2: {
-        type: DataTypes.TEXT,
-      },
-      answerchoice3: {
-        type: DataTypes.TEXT,
-      },
       question_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
           model: 'question',
+          key: 'id',
+        }
+      },
+      location_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'location',
           key: 'id',
         }
       }
