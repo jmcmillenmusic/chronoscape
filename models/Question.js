@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+
 class Question extends Model {}
 
 Question.init(
@@ -21,6 +22,12 @@ Question.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'question',
-  }
+  },
+
 );
+
+
+
+// Question.associate = ( models ) =>{ Question.hasMany( models.answer, { foreignKey: 'answer.id', sourceKey: 'id' } ); };
+
 module.exports = Question;
