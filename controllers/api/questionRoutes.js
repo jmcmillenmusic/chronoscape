@@ -1,10 +1,13 @@
 const router = require('express').Router();
-const Questions = require('../../models/Questions'); 
+const { Question, Answer, Location } = require('../../models'); 
+// const Question = require('../../models/Question'); 
+// const Answer = require('../../models/Answer'); 
+// const Location = require('../../models/Location'); 
 
 // Get all cards
 router.get('/', async (req, res) => {
   try {
-    const questions = await Questions.findAll();
+    const questions = await Question.findAll();
     res.json(questions);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching answers', error: error.message });
@@ -13,18 +16,33 @@ router.get('/', async (req, res) => {
 
 // Get a specific card by ID
 router.get('/:id', async (req, res) => {
+  const questionId = req.params.id;
   try {
-    const questions = await Questions.findByPk(req.params.id);
-    if (questions) {
-      res.json(questions);
-    } else {
-      res.status(404).json({ message: 'Card not found' });
+    const question = await Question.findByPk(questionId, {
+      raw: true,
+      include: [
+        {
+          model: Answer, // Use the Answer model directly
+          as: 'answers', // Use the alias defined in your model association
+          include: [
+            {
+              model: Location,
+            },
+          ],
+        },
+      ],
+    });
+
+    if (!question) {
+      return res.status(404).json({ error: 'Question not found' });
     }
+
+    res.json(question);
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching card', error: error.message });
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
-
 
 
 module.exports = router;

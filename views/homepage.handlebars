@@ -9,11 +9,11 @@
 
 {{!-- Create a div with the id cardContainer that we'll reference in the JS --}}
 
-<div id="cardContainer" class="card w-50 text-center"></div>
+{{!-- <div id="cardContainer" class="card w-50 text-center"></div> --}}
 
 {{!-- This should auto populate when the page starts, and when you click the next button, the current one should disappear and the next one should appear --}}
 
-</div>
+{{!-- </div> --}}
 
 {{!-- {{#each cardData}}
 <div class="card w-50 text-center">
@@ -27,6 +27,14 @@
 </div>
 {{/each}} --}}
 
+<script id="question-template" type="text/x-handlebars-template">
+  <div class="question">
+    <h2>{{question.title}}</h2>
+    <p>{{question.description}}</p>
+    <!-- Render other question-related data as needed -->
+  </div>
+</script>
 
-<script src="/js/homepage.js"></script>
+
+<script src="/js/homepage2.js"></script>
 {{!-- <script src="/js/logic.js"></script> --}}

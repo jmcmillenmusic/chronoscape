@@ -5,7 +5,7 @@ const Answer = require('./answerRoutes');
 const Question = require('./questionRoutes');
 const Location = require('./locationRoutes');
 
-router.use('/cards', cardRoutes);cd
+router.use('/cards', cardRoutes);
 router.use('/continuecards', continueCardRoutes);
 router.use('/answers', Answer);
 router.use('/questions', Question);
