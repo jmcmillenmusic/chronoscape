@@ -11,16 +11,14 @@ const seedDatabase = async () => {
         returning: true,
       });
 
-    const location = await Location.bulkCreate(locations, {
-        returning: true,
-      });
-      
     const answer = await Answer.bulkCreate(answers, {
         returning: true,
       });
 
-    
-
+    const location = await Location.bulkCreate(locations, {
+        returning: true,
+      });
+      
       process.exit(0);
 };  
 
