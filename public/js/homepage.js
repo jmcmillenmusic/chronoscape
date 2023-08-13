@@ -96,8 +96,6 @@ function displayCard(card) {
     
 };
 
-
-
 //Did have to use AI for this, I didn't know that you could use async and await when creating functions.
 async function fetchAndDisplayNextCard() {
     try {

@@ -7,8 +7,8 @@ const Location = require('./locationRoutes');
 
 router.use('/cards', cardRoutes);
 router.use('/continuecards', continueCardRoutes);
-router.use('/answers', Answer);
-router.use('/questions', Question);
+router.use('/answer', Answer);
+router.use('/question', Question);
 router.use('/location', Location);
 
 module.exports = router;
