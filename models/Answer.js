@@ -11,7 +11,7 @@ Answer.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    answerchoice: {
+    answerChoice: {
       type: DataTypes.TEXT,
     },
       question_id: {
@@ -22,7 +22,7 @@ Answer.init(
           key: 'id',
         }
       },
-      answer_id: {
+      parent_answer_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
         references: {

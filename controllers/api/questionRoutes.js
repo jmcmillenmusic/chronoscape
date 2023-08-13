@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Questions = require('../../models/Questions'); 
+const Questions = require('../../models/Question'); 
 
 // Get all cards
 router.get('/', async (req, res) => {
