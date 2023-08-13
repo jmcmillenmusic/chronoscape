@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/api/cards/:id', async (req, res) => {
+router.get('/cards/:id', async (req, res) => {
     try {
         const cardId = req.params.id;
         const cardData = await Card.findByPk(cardId, { raw: true, attributes: ['description', 'answerChoice1', 'answerChoice2', 'answerChoice3'] });
@@ -35,7 +35,7 @@ router.get('/api/cards/:id', async (req, res) => {
     }
 });
 
-router.get('/api/continuecards/:id', async (req, res) => {
+router.get('continueCards/:id', async (req, res) => {
     try {
         const cardId = req.params.id;
         const cardData = await ContinueCard.findByPk(cardId, { raw: true, attributes: ['title', 'description'] });
