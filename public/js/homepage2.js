@@ -130,7 +130,7 @@ const nextQuestionHandler = async function (event) {
 
 const endRouteHandler = async function (event) {
   childAnswerContainer.style.display = 'none';
-  childAnswerContainer.style.display = 'none';
+  childAnswerContainer.style.display = 'block';
 }
 
 
@@ -138,7 +138,7 @@ const endRouteHandler = async function (event) {
 // Simply hides the parent Location container and shows the child answers
 const showNewQuestions = async function (event) {
   locationContainer.style.display = 'none';
-  childLocationContainer.style.display = 'block';
+  childAnswerContainer.style.display = 'block';
 }
 
 
