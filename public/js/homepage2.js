@@ -1,4 +1,7 @@
 const questionContainer = document.querySelector("#question-container");
+const parentList = document.querySelector('.parent-container');
+
+const parentAnswer = document.querySelectorAll('.parentAnswer');
 
 // Sample data (replace this with your actual data)
 const questionData = { /* ... your question data here ... */ };
@@ -33,6 +36,7 @@ function displayQuestion(question) {
 
 
 
+
 const nextQuestionHandler = async function (event) {
   event.preventDefault();
 
@@ -50,14 +54,34 @@ const nextQuestionHandler = async function (event) {
 
   // console.log(blogId, text);
   if (answer) {
+    
     const res = await fetch(url, settings);
     const data = await res.json();
+
+
+    for(let i = 0; i < nextBtn.length; i++){
+      parentAnswer[i].style.display = 'none';
+    }
+
+    for (let i = 0; i < data.ChildAnswers.length; i++) {
+      const newChoice = data.ChildAnswers[i].answerChoice;
+
+      const li = document.createElement('li');
+      const button = document.createElement('button')
+
+      button.innerHTML = newChoice;
+
+      li.appendChild(button);
+      parentList.appendChild(li)
+      console.log(newChoice);
+      
+    }
     console.log(data);
   }
 }
 
+
 const nextBtn = document.querySelectorAll('.next');
-// console.log(nextBtn)
 
 for(let i = 0; i < nextBtn.length; i++){
   nextBtn[i].addEventListener('click', nextQuestionHandler);
