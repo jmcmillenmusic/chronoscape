@@ -17,16 +17,30 @@
     {{!-- <video autoplay muted loop id="myVideo">
         <source src="/video/pexels_videos_3867 (1080p).mp4" type="video/mp4">
     </video> --}}
+    <div class="loader">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
 
-    <img id="background-image" src=""></img>
-    <header class="animate__animated animate__rollIn">
-        <h1>
-            Chronoscape
-        </h1>
-    </header>
+    <div class="hero-sec" style="display: none;">
+        <img class="darken" id="background-image" src=""></img>
+        <header class="animate__animated animate__rollIn">
+            <h1 class="title_name">
+                Chronoscape
+            </h1>
+        </header>
+    </div>
 
-    <main>
-        <div class="animate__animated animate__backInLeft">
+    <main class="main-body" style="display: none;">
+        {{!-- <div class="animate__animated animate__backInLeft">
             <div class="card__inner">
                 <div class="card__face card__face--front">
                     {{{ body }}}
@@ -41,9 +55,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
+        {{{ body }}}
     </main>
-{{!-- 
+    {{!--
     <main class="card animate__animated animate__backInDown">
         <div class="card__inner2">
             <div class="card__face card__face--front">
@@ -80,7 +95,12 @@
         </div>
     </main> --}}
 
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <script src="/js/background.js"></script>
 
 </body>
+
 </html>

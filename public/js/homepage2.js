@@ -12,11 +12,11 @@ const nextBtn = document.querySelectorAll('.next');
 // Sample data (replace this with your actual data)
 const questionData = { /* ... your question data here ... */ };
 
-const card = document.querySelector('.card__inner');
+// const card = document.querySelector('.card__inner');
 
-card.addEventListener('click', function () {
-    card.classList.toggle('is-flipped');
-});
+// card.addEventListener('click', function () {
+//     card.classList.toggle('is-flipped');
+// });
 
 // const card2 = document.querySelector('.card__inner2');
 
@@ -113,8 +113,17 @@ const nextQuestionHandler = async function (event) {
     // This is outside the for loop so it doesn't get added 3 times.
     const newQuestion = data.ChildAnswers[1].question.question;
     const p = document.createElement('p');
+
     p.innerHTML = newQuestion;
+    p.classList.add('main-question');
+    
     childAnswerContainer.appendChild(p);
+
+    // Create ul and li for the for loop.
+    // This is outside the for loop so it doesn't get added 3 times.
+    const ul = document.createElement('ul');
+    const li = document.createElement('li');
+    li.style.display = 'inline-block'
 
     // Adds all answers to the hidden childAnswer-container.
     // Loops through the child answers and creates a button for each one
@@ -123,16 +132,19 @@ const nextQuestionHandler = async function (event) {
       // set a const to the childAnswer's text
       const childAnswer = data.ChildAnswers[i].answerChoice;
 
-      // creates the three new elements that will be appended to the childAnswer-container
-      const ul = document.createElement('ul');
-      const li = document.createElement('li');
+      // creates new buttons elements that will be appended to the childAnswer-container
       const button = document.createElement('button')
 
-      // Set button's text to the ChildAnswer.
-      button.innerHTML = childAnswer;
-      button.addEventListener('click', endRouteHandler);
-      button.dataset.answer_id = data.ChildAnswers[i].id;
       
+      // Set button's innerHTML to a div containing the card styling.
+      button.innerHTML = `
+      <div class="next card__face card__face--front"  data-answer_id=${data.ChildAnswers[i].id}>
+        ${childAnswer}
+      </div>`;
+      button.classList.add('card');
+      ul.classList.add('answerChoices')
+      button.addEventListener('click', endRouteHandler);
+
       // Append button to list element
       li.appendChild(button);
       // Append list element to an unordered list

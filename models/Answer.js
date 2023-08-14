@@ -15,6 +15,9 @@ Answer.init(
     answerChoice: {
       type: DataTypes.TEXT,
     },
+    ImgLink: {
+      type: DataTypes.TEXT,
+    },
     question_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
