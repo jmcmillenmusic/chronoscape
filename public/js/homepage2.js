@@ -1,5 +1,6 @@
 const questionContainer = document.querySelector("#question-container");
-const parentList = document.querySelector('.parent-container');
+const nextQuestionContainer = document.querySelector("#question2-container");
+const locationContainer = document.querySelector("#location-container");
 
 const parentAnswer = document.querySelectorAll('.parentAnswer');
 
@@ -54,32 +55,64 @@ const nextQuestionHandler = async function (event) {
 
   // console.log(blogId, text);
   if (answer) {
-    
+
     const res = await fetch(url, settings);
     const data = await res.json();
 
 
-    for(let i = 0; i < nextBtn.length; i++){
-      parentAnswer[i].style.display = 'none';
-    }
+    questionContainer.style.display = 'none';
+    
+
+    // console.log(data.location.locationData);
+
+    const pTitle = document.createElement('p');
+    const pData = document.createElement('p');
+    const newNextBtn = document.createElement('button');
+    
+    newNextBtn.innerHTML = 'Continue';
+    newNextBtn.addEventListener('click', showNewQuestions)
+
+    pTitle.innerHTML = data.location.locationTitle;
+    pData.innerHTML = data.location.locationData;
+
+    locationContainer.appendChild(pTitle);
+    locationContainer.appendChild(pData);
+    locationContainer.appendChild(newNextBtn);
+
+    locationContainer.style.display = 'block';
+
+    const newQuestion = data.ChildAnswers[1].question.question;
+    const p = document.createElement('p');
+    p.innerHTML = newQuestion;
+    nextQuestionContainer.appendChild(p);
 
     for (let i = 0; i < data.ChildAnswers.length; i++) {
       const newChoice = data.ChildAnswers[i].answerChoice;
 
+      const ul = document.createElement('ul');
       const li = document.createElement('li');
       const button = document.createElement('button')
 
       button.innerHTML = newChoice;
-
-      li.appendChild(button);
-      parentList.appendChild(li)
-      console.log(newChoice);
       
+      
+      li.appendChild(button);
+      ul.appendChild(li);
+
+
+      nextQuestionContainer.appendChild(ul);
+      
+      console.log(newChoice);
     }
+
     console.log(data);
   }
 }
 
+const showNewQuestions = async function (event) {
+  locationContainer.style.display = 'none';
+  nextQuestionContainer.style.display = 'block';
+}
 
 const nextBtn = document.querySelectorAll('.next');
 

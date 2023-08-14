@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Answer, Location } = require('../../models'); 
+const { Question, Answer, Location } = require('../../models'); 
 
 // Get all cards
 router.get('/', async (req, res) => {
@@ -48,6 +48,11 @@ router.get('/:id', async (req, res) => {
           include: [
             {
               model: Location,
+            },
+          ],
+          include: [
+            {
+              model: Question,
             },
           ],
         },
