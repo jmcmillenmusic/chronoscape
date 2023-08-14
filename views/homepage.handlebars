@@ -1,21 +1,19 @@
-{{!-- Shows all questions --}}
-{{!-- {{#each questions}}
-  <h2>Question: {{this.question}}</h2>
-  <ul>
-    {{#each this.answers}}
-      <li>Answer: {{this.answerChoice}}</li>
-    {{/each}}
-  </ul>
-{{/each}} --}}
+<!-- First slide -->
+<div class="slide">
+  <h1 id ="title">Welcome to the Multiverse Protection Force, or MPF, for short.</h1>
+  <p id="description">Welcome agent! You are a seasoned MPF agent that has successfully removed numerous threats to the multiverse. As a result, the MPF trusts you to handle one of their biggest threats yet. Stopping a former MPF Agent from destroying the Space-Time Continuum. Your mission objective in simple, find the Multiversal Traveler, apprehend them, and bring them back to MPF. Alive.</p>
+  <button class="next-button-first-slide">Next</button>
+</div>
+
 
 {{!-- Shows first quesiton --}}
-<div id="question-container">
+<div id="question-container" style="display: none;">
   <h2>Question: {{questions.[0].question}}</h2>
   <ul>
     {{#each questions.[0].answers}}
       <li>
         <Button class="next" data-answer_id={{this.id}}>Answer Choice: {{this.answerChoice}}</Button>
-        <ul>
+        {{!-- <ul>
           <li>Location Title: {{this.location.locationTitle}}</li>
           <li>Location Data: {{this.location.locationData}}</li>
           {{#if this.ChildAnswers}}
@@ -31,11 +29,12 @@
               {{/each}}
             </ul>
           {{/if}}
-        </ul>
+        </ul> --}}
       </li>
     {{/each}}
   </ul>
 </div>
 
+<script src="/js/homepage.js"></script>
 <script src="/js/homepage2.js"></script>
 {{!-- <script src="/js/logic.js"></script> --}}
