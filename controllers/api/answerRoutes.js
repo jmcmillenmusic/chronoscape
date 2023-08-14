@@ -38,15 +38,20 @@ router.get('/:id', async (req, res) => {
   try {
     const answer = await Answer.findByPk(answerId, {
       raw: false,
-      include: {
-        model: Answer, // Include child answers for the child answers
-        as: 'ChildAnswers',
-        include: [
-          {
-            model: Location,
-          },
-        ]
-      },
+      include: [
+        {
+          model: Location,
+        },
+        {
+          model: Answer,
+          as: 'ChildAnswers',
+          include: [
+            {
+              model: Location,
+            },
+          ],
+        },
+      ],
     });
 
     if (answer) {
