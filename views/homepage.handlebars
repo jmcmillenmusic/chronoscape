@@ -7,7 +7,7 @@
 
 
 {{!-- Shows first quesiton --}}
-<div id="question-container" style="display: none;">
+<div id="parentAnswer-container" style="display: none;">
   <h2 class="main-question">Question: {{questions.[0].question}}</h2>
   <ul>
     {{#each questions.[0].answers}}
@@ -35,11 +35,14 @@
   </ul>
 </div>
 
-<div id="location-container" style="display: none;">
+<div id="parentLocation-container" style="display: none;">
   {{!-- <button class="continue">Continue</button> --}}
 </div>
 
-<div id="question2-container" style="display: none;">
+<div id="childAnswer-container" style="display: none;">
+</div>
+
+<div id="childLocation-container" style="display: none;">
 </div>
 
 <script src="/js/homepage.js"></script>
