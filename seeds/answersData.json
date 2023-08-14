@@ -28,146 +28,146 @@
   },
   {
     "answerChoice": "Lizzie's Bar",
-    "question_id": 2,
+    "question_id": 3,
     "parent_answer_id": 2
   },
   {
     "answerChoice": "Afterlife Club",
-    "question_id": 2,
+    "question_id": 3,
     "parent_answer_id": 2
   },
   {
     "answerChoice": "Arasaka Tower",
-    "question_id": 2,
+    "question_id": 3,
     "parent_answer_id": 2
   },
   {
     "answerChoice": "Arkham Asylum",
-    "question_id": 2,
+    "question_id": 4,
     "parent_answer_id": 3
   },
   {
     "answerChoice": "Bat Cave",
-    "question_id": 2,
+    "question_id": 4,
     "parent_answer_id": 3
   },
   {
     "answerChoice": "Gotham Prison",
-    "question_id": 2,
+    "question_id": 4,
     "parent_answer_id": 3
   },
   {
     "answerChoice": "Detroit, 2038",
-    "question_id": 3
+    "question_id": 5
   },
   {
     "answerChoice": "Village Hidden in the Leaves",
-    "question_id": 3
+    "question_id": 5
   },
   {
     "answerChoice": "Danville, Tri-State",
-    "question_id": 3
+    "question_id": 5
   },
   {
     "answerChoice": "Eden Club",
-    "question_id": 2,
+    "question_id": 6,
     "parent_answer_id": 13
   },
   {
     "answerChoice": "CyberLife Warehouse",
-    "question_id": 2,
+    "question_id": 6,
     "parent_answer_id": 13
   },
   {
     "answerChoice": "CyberLife Tower",
-    "question_id": 2,
+    "question_id": 6,
     "parent_answer_id": 13
   },
   {
     "answerChoice": "Hokage Mansion",
-    "question_id": 2,
+    "question_id": 7,
     "parent_answer_id": 14
   },
   {
     "answerChoice": "Ichiraku Ramen",
-    "question_id": 2,
+    "question_id": 7,
     "parent_answer_id": 14
   },
   {
     "answerChoice": "Hokage Rock",
-    "question_id": 2,
+    "question_id": 7,
     "parent_answer_id": 15
   },
   {
     "answerChoice": "Googolplex Mall",
-    "question_id": 2,
+    "question_id": 8,
     "parent_answer_id": 15
   },
   {
     "answerChoice": "Doofenshmirtz Evil Incorporated",
-    "question_id": 2,
+    "question_id": 8,
     "parent_answer_id": 15
   },
   {
     "answerChoice": "Danville Arena",
-    "question_id": 2,
+    "question_id": 8,
     "parent_answer_id": 15
   },
   {
     "answerChoice": "TVA",
-    "question_id": 4
+    "question_id": 9
   },
   {
     "answerChoice": "Temps Commission",
-    "question_id": 4
+    "question_id": 9
   },
   {
     "answerChoice": "Spider-Society",
-    "question_id": 4
+    "question_id": 9
   },
   {
     "answerChoice": "TVA Offices",
-    "question_id": 2,
+    "question_id": 10,
     "parent_answer_id": 25
   },
   {
     "answerChoice": "Warehouse",
-    "question_id": 2,
+    "question_id": 10,
     "parent_answer_id": 25
   },
   {
     "answerChoice": "TVA Court",
-    "question_id": 2,
+    "question_id": 10,
     "parent_answer_id": 25
   },
   {
     "answerChoice": "Time Control Room",
-    "question_id": 2,
+    "question_id": 11,
     "parent_answer_id": 26
   },
   {
     "answerChoice": "Temps Offices",
-    "question_id": 2,
+    "question_id": 11,
     "parent_answer_id": 26
   },
   {
     "answerChoice": "Handler's Office",
-    "question_id": 2,
+    "question_id": 11,
     "parent_answer_id": 26
   },
   {
     "answerChoice": "Teleportation Room",
-    "question_id": 2,
+    "question_id": 12,
     "parent_answer_id": 27
   },
   {
     "answerChoice": "Mess Hall",
-    "question_id": 2,
+    "question_id": 12,
     "parent_answer_id": 27
   },
   {
     "answerChoice": "Overseers Office",
-    "question_id": 2,
+    "question_id": 12,
     "parent_answer_id": 27
   }
 ]
