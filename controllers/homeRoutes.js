@@ -3,28 +3,8 @@ const Card = require('../models/Card');
 const ContinueCard = require('../models/ContinueCard');
 const Question = require('../models/Question')
 const Answer = require('../models/Answer')
+const Location = require('../models/Location')
 
-// router.get('/', async (req, res) => {
-//     try {
-//         //Below loads all cards and shows the description and answer choices
-
-//         const continueCardData = await ContinueCard.findByPk(1, {attributes: ['title', 'description']});
-//         const cardData = await Card.findAll({raw: true, attributes: ['description', 'answerChoice1', 'answerChoice2', 'answerChoice3']})
-
-//         //Show this for now
-//         // res.status(200).json(cardData);
-//         const continueCard = continueCardData.get({ plain: true }); 
-//         // const card = cardData.get({ plain: true }); 
-//         // console.log("LOOK AT THIS" + cardData.title + cardData.description);
-//         console.log(cardData);
-//         res.render('homepage', { continueCard, cardData }); // Pass the continueCard data to the view
-        
-//     }
-//     catch(err)
-//     {
-//         res.status(500).json(err);
-//     }
-// });
 
 router.get('/cards/:id', async (req, res) => {
     try {
@@ -52,12 +32,23 @@ router.get('/', async (req, res) => {
     try {
       // Get all projects and JOIN with user data
       const questionData = await Question.findAll({
-        include: [
-          {
-            model: Answer,
-            attributes: ['answerChoice'],
-          },
-        ],
+        include: {
+          model: Answer,
+          include: [
+            {
+              model: Location,
+            },
+            {
+              model: Answer, // Include child answers for the child answers
+              as: 'ChildAnswers',
+              include: [
+                {
+                  model: Location,
+                },
+              ],
+            },
+          ],
+        },
       });
   
       // Serialize data so the template can read it
