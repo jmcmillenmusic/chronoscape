@@ -20,27 +20,23 @@ router.get('/:id', async (req, res) => {
   try {
     const question = await Question.findByPk(questionId, {
       raw: false,
-      include: [
-        {
-          model: Answer, // Use the Answer model directly
-          as: 'answers', // Use the alias defined in your model association
-          attributes: ['answerChoice' ,'question_id' , 'parent_answer_id'],
-          include: [
-            {
-              model: Answer,
-              as: 'Answers',
-              through: 'ChildAnswers',
-              required: true,
-            },
-          ],
-          include: [
-            {
-              model: Location,
-              attributes: ['locationTitle' ,'locationData'],
-            },
-          ],
-        },
-      ],
+      include: {
+        model: Answer,
+        include: [
+          {
+            model: Location,
+          },
+          {
+            model: Answer, // Include child answers for the child answers
+            as: 'ChildAnswers',
+            include: [
+              {
+                model: Location,
+              },
+            ],
+          },
+        ],
+      },
     });
 
     if (!question) {
