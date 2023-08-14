@@ -1,5 +1,5 @@
 <!-- First slide -->
-<div class="slide">
+<div class="slide" style="color: white;">
   <h1 id ="title">Welcome to the Multiverse Protection Force, or MPF, for short.</h1>
   <p id="description">Welcome agent! You are a seasoned MPF agent that has successfully removed numerous threats to the multiverse. As a result, the MPF trusts you to handle one of their biggest threats yet. Stopping a former MPF Agent from destroying the Space-Time Continuum. Your mission objective in simple, find the Multiversal Traveler, apprehend them, and bring them back to MPF. Alive.</p>
   <button class="next-button-first-slide">Next</button>
@@ -9,10 +9,14 @@
 {{!-- Shows first quesiton --}}
 <div id="parentAnswer-container" style="display: none;">
   <h2 class="main-question">Question: {{questions.[0].question}}</h2>
-  <ul>
+  <ul class="answerChoices">
     {{#each questions.[0].answers}}
-      <li class="parentAnswer">
-        <Button class="next" data-answer_id={{this.id}}>{{this.answerChoice}}</Button>
+      <li style="display:inline-block;">
+        <Button class="card">
+          <div class="next card__face card__face--front" data-answer_id={{this.id}}>
+            {{this.answerChoice}}
+          </div>
+        </Button>
         {{!-- <ul>
           <li>Location Title: {{this.location.locationTitle}}</li>
           <li>Location Data: {{this.location.locationData}}</li>
