@@ -46,7 +46,7 @@ const questionData = { /* ... your question data here ... */ };
 //     button.addEventListener("click", () => {
 //       const answerId = parseInt(button.getAttribute("data-answer-id"));
 //       const selectedAnswer = question.answers.find((answer) => answer.id === answerId);
-      
+
 //       if (selectedAnswer.ChildAnswers.length > 0) {
 //         // Display child question if available
 //         displayQuestion(selectedAnswer.ChildAnswers[0].location);
@@ -64,7 +64,7 @@ const questionData = { /* ... your question data here ... */ };
 const nextQuestionHandler = async function (event) {
   event.preventDefault();
 
-  const answerID =  event.target.getAttribute("data-answer_id");
+  const answerID = event.target.getAttribute("data-answer_id");
   const url = `/api/answer/${answerID}`;
   console.log(answerID)
 
@@ -83,7 +83,7 @@ const nextQuestionHandler = async function (event) {
 
     // Hide the main container
     parentAnswerContainer.style.display = 'none';
-    
+
 
     // console.log(data.location.locationData);
 
@@ -116,7 +116,7 @@ const nextQuestionHandler = async function (event) {
 
     p.innerHTML = newQuestion;
     p.classList.add('main-question');
-    
+
     childAnswerContainer.appendChild(p);
 
     // Create ul and li for the for loop.
@@ -135,7 +135,7 @@ const nextQuestionHandler = async function (event) {
       // creates new buttons elements that will be appended to the childAnswer-container
       const button = document.createElement('button')
 
-      
+
       // Set button's innerHTML to a div containing the card styling.
       button.innerHTML = `
       <div class="next card__face card__face--front"  data-answer_id=${data.ChildAnswers[i].id}>
@@ -151,7 +151,7 @@ const nextQuestionHandler = async function (event) {
       ul.appendChild(li);
       // Append unordered list to the childContainer
       childAnswerContainer.appendChild(ul);
-      
+
       console.log(childAnswer);
     }
 
@@ -160,7 +160,7 @@ const nextQuestionHandler = async function (event) {
 }
 
 const endRouteHandler = async function (event) {
-  const answerID =  event.target.getAttribute("data-answer_id");
+  const answerID = event.target.getAttribute("data-answer_id");
   const url = `/api/answer/${answerID}`;
   console.log(answerID)
 
@@ -176,7 +176,7 @@ const endRouteHandler = async function (event) {
     // fetch our data if there's an actual answerID
     const res = await fetch(url, settings);
     const data = await res.json();
-    
+
     console.log(data);
 
     // Create three new elements to append into the new LocationContainer
@@ -189,10 +189,17 @@ const endRouteHandler = async function (event) {
     pData.innerHTML = data.location.locationData;
 
     contBtn.innerHTML = 'Continue';
-    contBtn.addEventListener('click', function(){
-      document.location.replace('/route2')
+    
+    contBtn.addEventListener('click', function () {
+      if (document.URL.includes("/route2")) {
+        document.location.replace('/route3');
+      }
+      else if (document.URL.includes("/route3")) {
+        document.location.replace('/endRoute');
+      } else {
+        document.location.replace('/route2');
+      }
     });
-
     childLocationContainer.appendChild(pTitle);
     childLocationContainer.appendChild(pData);
     childLocationContainer.appendChild(contBtn);
@@ -200,7 +207,7 @@ const endRouteHandler = async function (event) {
 
   childAnswerContainer.style.display = 'none';
   childLocationContainer.style.display = 'block';
-  
+
 }
 
 
@@ -216,7 +223,7 @@ const showNewQuestions = async function (event) {
 
 
 
-for(let i = 0; i < nextBtn.length; i++){
+for (let i = 0; i < nextBtn.length; i++) {
   nextBtn[i].addEventListener('click', nextQuestionHandler);
 }
 
