@@ -31,5 +31,35 @@ function displayQuestion(question) {
   });
 }
 
+
+
+const nextQuestionHandler = async function (event) {
+  event.preventDefault();
+
+  const answer = document.querySelector('.next').dataset.answer_id;
+  const url = `/api/answer/${answer}`;
+  console.log(answer)
+
+  const settings = {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    }
+  };
+
+  // console.log(blogId, text);
+  if (answer) {
+    const res = await fetch(url, settings);
+    const data = await res.json();
+    console.log(data);
+  }
+}
+
+document
+  .querySelector('.next')
+  .addEventListener('click', nextQuestionHandler);
+
+
 // Start by displaying the first question
-displayQuestion(questionData.answers[0].location);
+// displayQuestion(questionData.answers[0].location);
