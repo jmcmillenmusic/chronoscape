@@ -1,5 +1,5 @@
-const parentQuestionContainer = document.querySelector("#parentAnswer-container");
-const childQuestionContainer = document.querySelector("#childAnswer-container");
+const parentAnswerContainer = document.querySelector("#parentAnswer-container");
+const childAnswerContainer = document.querySelector("#childAnswer-container");
 const locationContainer = document.querySelector("#parentLocation-container");
 const childLocationContainer = document.querySelector("#childLocation-container");
 
@@ -64,7 +64,7 @@ const nextQuestionHandler = async function (event) {
     const data = await res.json();
 
     // Hide the main container
-    parentQuestionContainer.style.display = 'none';
+    parentAnswerContainer.style.display = 'none';
     
 
     // console.log(data.location.locationData);
@@ -91,14 +91,14 @@ const nextQuestionHandler = async function (event) {
 
     locationContainer.style.display = 'block';
 
-    // Adds the question to the hidden question2-container.
+    // Adds the question to the hidden childAnswer-container.
     // This is outside the for loop so it doesn't get added 3 times.
     const newQuestion = data.ChildAnswers[1].question.question;
     const p = document.createElement('p');
     p.innerHTML = newQuestion;
-    childQuestionContainer.appendChild(p);
+    childAnswerContainer.appendChild(p);
 
-    // Adds all answers to the hidden question2-container.
+    // Adds all answers to the hidden childAnswer-container.
     // Loops through the child answers and creates a button for each one
     for (let i = 0; i < data.ChildAnswers.length; i++) {
 
@@ -112,13 +112,14 @@ const nextQuestionHandler = async function (event) {
 
       // Set button's text to the ChildAnswer.
       button.innerHTML = childAnswer;
+      button.addEventListener('click', endRouteHandler);
       
       // Append button to list element
       li.appendChild(button);
       // Append list element to an unordered list
       ul.appendChild(li);
       // Append unordered list to the childContainer
-      childQuestionContainer.appendChild(ul);
+      childAnswerContainer.appendChild(ul);
       
       console.log(childAnswer);
     }
@@ -127,11 +128,23 @@ const nextQuestionHandler = async function (event) {
   }
 }
 
+const endRouteHandler = async function (event) {
+  childAnswerContainer.style.display = 'none';
+  childAnswerContainer.style.display = 'none';
+}
+
+
+
 // Simply hides the parent Location container and shows the child answers
 const showNewQuestions = async function (event) {
   locationContainer.style.display = 'none';
-  childQuestionContainer.style.display = 'block';
+  childLocationContainer.style.display = 'block';
 }
+
+
+
+
+
 
 for(let i = 0; i < nextBtn.length; i++){
   nextBtn[i].addEventListener('click', nextQuestionHandler);
