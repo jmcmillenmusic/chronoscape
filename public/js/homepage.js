@@ -15,7 +15,7 @@ buttonElement.addEventListener('click', function () {
     }
     else if (clickCount == 2)
     {
-        parentQuestionContainer.style.display = 'block';
+        parentAnswerContainer.style.display = 'block';
         title.textContent = '';
         description.textContent = "";
         buttonElement.style.display = 'none';
