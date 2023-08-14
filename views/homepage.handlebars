@@ -9,10 +9,10 @@
 {{!-- Shows first quesiton --}}
 <div id="question-container" style="display: none;">
   <h2 class="main-question">Question: {{questions.[0].question}}</h2>
-  <ul class="parent-container">
+  <ul>
     {{#each questions.[0].answers}}
       <li class="parentAnswer">
-        <Button class="next" data-answer_id={{this.id}}>Answer Choice: {{this.answerChoice}}</Button>
+        <Button class="next" data-answer_id={{this.id}}>{{this.answerChoice}}</Button>
         {{!-- <ul>
           <li>Location Title: {{this.location.locationTitle}}</li>
           <li>Location Data: {{this.location.locationData}}</li>
@@ -33,6 +33,13 @@
       </li>
     {{/each}}
   </ul>
+</div>
+
+<div id="location-container" style="display: none;">
+  {{!-- <button class="continue">Continue</button> --}}
+</div>
+
+<div id="question2-container" style="display: none;">
 </div>
 
 <script src="/js/homepage.js"></script>
