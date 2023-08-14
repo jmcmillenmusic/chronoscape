@@ -102,6 +102,42 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.get('/route3', async (req, res) => {
+    try {
+      // Get all projects and JOIN with user data
+      const questionData = await Question.findAll({
+        include: {
+          model: Answer,
+          include: [
+            {
+              model: Location,
+            },
+            {
+              model: Answer, // Include child answers for the child answers
+              as: 'ChildAnswers',
+              include: [
+                {
+                  model: Location,
+                },
+              ],
+            },
+          ],
+        },
+      });
+  
+      // Serialize data so the template can read it
+      const questions = questionData.map((question) => question.get({ plain: true }));
+    //   console.log(questions);
+      
+  
+      // Pass serialized data and session flag into template
+      res.render('route3', { 
+        questions
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 
 module.exports = router;
