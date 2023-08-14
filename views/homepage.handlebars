@@ -8,10 +8,10 @@
 
 {{!-- Shows first quesiton --}}
 <div id="question-container" style="display: none;">
-  <h2>Question: {{questions.[0].question}}</h2>
-  <ul>
+  <h2 class="main-question">Question: {{questions.[0].question}}</h2>
+  <ul class="parent-container">
     {{#each questions.[0].answers}}
-      <li>
+      <li class="parentAnswer">
         <Button class="next" data-answer_id={{this.id}}>Answer Choice: {{this.answerChoice}}</Button>
         {{!-- <ul>
           <li>Location Title: {{this.location.locationTitle}}</li>
