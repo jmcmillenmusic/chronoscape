@@ -4,6 +4,7 @@ const ContinueCard = require('../models/ContinueCard');
 const Question = require('../models/Question')
 const Answer = require('../models/Answer')
 const Location = require('../models/Location')
+const User = require('../models/User')
 
 
 router.get('/cards/:id', async (req, res) => {
@@ -50,15 +51,17 @@ router.get('/', async (req, res) => {
           ],
         },
       });
+      const userData = await User.findAll({});
   
       // Serialize data so the template can read it
       const questions = questionData.map((question) => question.get({ plain: true }));
+      const users = userData.map((user) => user.get({ plain: true }));
     //   console.log(questions);
       
   
       // Pass serialized data and session flag into template
       res.render('homepage', { 
-        questions
+        questions, users
       });
     } catch (err) {
       res.status(500).json(err);
