@@ -1,39 +1,22 @@
-
-{{!-- <div class="card w-50 text-center">
-  <div class="card-body">
-    <h5 class="card-title">{{continueCard.title}} </h5>
-    <p class="card-text">{{continueCard.description}}</p>
-    <a id="continueButton" class="btn btn-primary">Next Card</a>
-  </div>
-</div> --}}
-
-{{!-- Create a div with the id cardContainer that we'll reference in the JS --}}
-
-{{!-- <div id="cardContainer" class="card w-50 text-center"></div> --}}
-
-{{!-- This should auto populate when the page starts, and when you click the next button, the current one should disappear and the next one should appear --}}
-
-{{!-- </div> --}}
-
-{{!-- {{#each cardData}}
-<div class="card w-50 text-center">
-  <div class="card-body">
-    <h5 class="card-title">{{this.description}} </h5>
-    <p class="card-text">{{this.answerChoice1}}</p>
-    <p class="card-text">{{this.answerChoice2}}</p>
-    <p class="card-text">{{this.answerChoice3}}</p>
-    <a href="/api/cards/{{this.id}}" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+{{!-- Shows all questions --}}
+{{!-- {{#each questions}}
+  <h2>Question: {{this.question}}</h2>
+  <ul>
+    {{#each this.answers}}
+      <li>Answer: {{this.answerChoice}}</li>
+    {{/each}}
+  </ul>
 {{/each}} --}}
 
-<script id="question-template" type="text/x-handlebars-template">
-  <div class="question">
-    <h2>{{question.title}}</h2>
-    <p>{{question.description}}</p>
-    <!-- Render other question-related data as needed -->
-  </div>
-</script>
+{{!-- Shows first quesiton --}}
+<h2>Question: {{questions.[0].question}}</h2>
+<ul>
+  {{#each questions.[0].answers}}
+    <button>Answer: {{this.answerChoice}}</button>
+    <li>Location Title: {{this.location.locationTitle}}</li>
+    <li>Location Data: {{this.location.locationData}}</li>
+  {{/each}}
+</ul>
 
 
 <script src="/js/homepage2.js"></script>
