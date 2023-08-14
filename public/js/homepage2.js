@@ -36,7 +36,7 @@ function displayQuestion(question) {
 const nextQuestionHandler = async function (event) {
   event.preventDefault();
 
-  const answer = document.querySelector('.next').dataset.answer_id;
+  const answer =  event.target.getAttribute("data-answer_id");
   const url = `/api/answer/${answer}`;
   console.log(answer)
 
@@ -56,9 +56,12 @@ const nextQuestionHandler = async function (event) {
   }
 }
 
-document
-  .querySelector('.next')
-  .addEventListener('click', nextQuestionHandler);
+const nextBtn = document.querySelectorAll('.next');
+// console.log(nextBtn)
+
+for(let i = 0; i < nextBtn.length; i++){
+  nextBtn[i].addEventListener('click', nextQuestionHandler);
+}
 
 
 // Start by displaying the first question
