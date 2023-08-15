@@ -201,7 +201,7 @@ const endRouteHandler = async function (event) {
 
   childAnswerContainer.style.display = 'none';
   childLocationContainer.style.display = 'block';
-
+  setBgImg(answerID);
 }
 
 // Simply hides the parent Location container and shows the child answers
