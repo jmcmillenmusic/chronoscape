@@ -37,6 +37,15 @@
                 Chronoscape
             </h1>
         </header>
+    <nav>
+        {{#if logged_in}}
+        <a href="/">Main</a> |
+        <a href="/profile">Profile</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+    </nav>
     </div>
 
     <main class="main-body" style="display: none;">
@@ -100,6 +109,10 @@
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <script src="/js/background.js"></script>
+
+{{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 
 </body>
 
