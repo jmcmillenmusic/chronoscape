@@ -67,7 +67,8 @@ router.post('/login', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   const userID = req.params.id;
-
+  const scores = req.body;
+  console.log(scores)
   try {
     const user = await User.findByPk(userID);
 
@@ -75,15 +76,59 @@ router.put('/:id', async (req, res) => {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    user.mpf += 1
+    user.mpf += scores.MPF;
+    user.void += scores.Void;
+    user.traveler += scores.Traveler;
+    
     await user.save();
-
+    res.status(200).json(user);
+    console.log('This is the users MPF score:' + user.mpf)
     // res.redirect('/route2');
 
   } catch (err) {
     res.status(500).json(err);
   }
 })
+
+// router.put('/void/:id', async (req, res) => {
+//   const userID = req.params.id;
+
+//   try {
+//     const user = await User.findByPk(userID);
+
+//     if (!user) {
+//       return res.status(404).json({ message: 'User not found' });
+//     }
+
+//     user.void += 1
+//     await user.save();
+
+//     // res.redirect('/route2');
+
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// })
+
+// router.put('/traveler/:id', async (req, res) => {
+//   const userID = req.params.id;
+
+//   try {
+//     const user = await User.findByPk(userID);
+
+//     if (!user) {
+//       return res.status(404).json({ message: 'User not found' });
+//     }
+
+//     user.traveler += 1
+//     await user.save();
+
+//     // res.redirect('/route2');
+
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// })
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {

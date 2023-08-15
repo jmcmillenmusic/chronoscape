@@ -7,29 +7,6 @@ const Answer = require('../models/Answer')
 const Location = require('../models/Location')
 const User = require('../models/User')
 
-
-router.get('/cards/:id', async (req, res) => {
-    try {
-        const cardId = req.params.id;
-        const cardData = await Card.findByPk(cardId, { raw: true, attributes: ['description', 'answerChoice1', 'answerChoice2', 'answerChoice3'] });
-
-        res.json(cardData); // Return the card data as JSON
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-router.get('continueCards/:id', async (req, res) => {
-    try {
-        const cardId = req.params.id;
-        const cardData = await ContinueCard.findByPk(cardId, { raw: true, attributes: ['title', 'description'] });
-
-        res.json(cardData); // Return the card data as JSON
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
 router.get('/', async (req, res) => {
     try {
       // Get all projects and JOIN with user data
@@ -117,15 +94,28 @@ router.get('/', async (req, res) => {
           ],
         },
       });
+
+      let userData = null;
+      if(req.session.user_id)
+      {
+        userData = await User.findByPk(req.session.user_id, {
+          attributes: { exclude: ['password'] }
+        });
+      }
   
       // Serialize data so the template can read it
       const questions = questionData.map((question) => question.get({ plain: true }));
     //   console.log(questions);
       
+
+    const user = userData ? userData.get({ 
+      plain: true,
+      attributes: ['id', 'name', 'email', 'mpf', 'traveler', 'void']
+    }) : null;
   
       // Pass serialized data and session flag into template
       res.render('route2', { 
-        questions
+        questions, user
       });
     } catch (err) {
       res.status(500).json(err);
@@ -155,14 +145,27 @@ router.get('/', async (req, res) => {
         },
       });
   
+      let userData = null;
+      if(req.session.user_id)
+      {
+        userData = await User.findByPk(req.session.user_id, {
+          attributes: { exclude: ['password'] }
+        });
+      }
+  
       // Serialize data so the template can read it
       const questions = questionData.map((question) => question.get({ plain: true }));
     //   console.log(questions);
       
-  
+
+    const user = userData ? userData.get({ 
+      plain: true,
+      attributes: ['id', 'name', 'email', 'mpf', 'traveler', 'void']
+    }) : null;
+
       // Pass serialized data and session flag into template
       res.render('route3', { 
-        questions
+        questions, user
       });
     } catch (err) {
       res.status(500).json(err);
