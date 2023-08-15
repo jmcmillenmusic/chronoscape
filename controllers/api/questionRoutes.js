@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { Question, Answer, Location } = require('../../models'); 
-// const Question = require('../../models/Question'); 
-// const Answer = require('../../models/Answer'); 
-// const Location = require('../../models/Location'); 
+
 
 // Get all cards
 router.get('/', async (req, res) => {
@@ -27,7 +25,7 @@ router.get('/:id', async (req, res) => {
             model: Location,
           },
           {
-            model: Answer, // Include child answers for the child answers
+            model: Answer, 
             as: 'ChildAnswers',
             include: [
               {

@@ -9,7 +9,6 @@ const endingHandler = async function (event) {
 
   const userID = document.querySelector('.slide').dataset.user_id;
   const userURL = `/api/users/${userID}`;
-  console.log(userID)
 
   const getSettings = {
     method: 'GET',
@@ -24,7 +23,6 @@ const endingHandler = async function (event) {
     const res = await fetch(userURL, getSettings);
     const data = await res.json();
 
-    console.log(data.void);
 
     if (data.void >= 2)
     {
@@ -37,22 +35,6 @@ const endingHandler = async function (event) {
       goodEnding.style.display = 'block';
     }
 
-    // switch (data) {
-    //   case data.mpf == data.void == data.traveler:
-    //     goodEnding.style.display = 'block';
-    //     break;
-    //   case data.mpf > data.void:
-    //     mpfEnding.style.display = 'block';
-    //     break;
-    //   case data.void > data.traveler:
-    //     voidEnding.style.display = 'block';
-    //     // Show bad ending (Void)
-    //     break;
-    //   case data.traveler > data.mpf:
-    //     travelerEnding.style.display = 'block';
-    //     // Show bad ending (Traveler)
-    //     break;
-    // }
   }
 }
 

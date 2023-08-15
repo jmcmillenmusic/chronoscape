@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     const answer = await Answer.findAll({
       raw: false,
       include: {
-        model: Answer, // Include child answers for the child answers
+        model: Answer, 
         as: 'ChildAnswers',
         include: [
           {
