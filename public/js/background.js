@@ -89,4 +89,40 @@ switch (questions.id) {
     case 25: //Danville Arena
         background.setAttribute('src', 'https://images.pexels.com/photos/2177814/pexels-photo-2177814.jpeg');
         break;
+    case 26: //TVA
+        background.setAttribute('src', 'https://images.pexels.com/photos/416328/pexels-photo-416328.jpeg');
+        break;
+    case 27: //Offices (TVA)
+        background.setAttribute('src', 'https://images.pexels.com/photos/13162091/pexels-photo-13162091.jpeg');
+        break;
+    case 28: //Warehouse
+        background.setAttribute('src', 'https://images.pexels.com/photos/257636/pexels-photo-257636.jpeg');
+        break;
+    case 29: //TVA Court
+        background.setAttribute('src', 'https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg');
+        break;
+    case 30: //Temps Commission
+        background.setAttribute('src', 'https://images.pexels.com/photos/6368790/pexels-photo-6368790.jpeg');
+        break;
+    case 31: //Time Control Room
+        background.setAttribute('src', 'https://images.pexels.com/photos/55830/power-plant-control-room-electric-old-55830.jpeg');
+        break;
+    case 32: //Temps Offices
+        background.setAttribute('src', 'https://images.pexels.com/photos/5453811/pexels-photo-5453811.jpeg');
+        break;
+    case 33: //Handler's Office
+        background.setAttribute('src', 'https://images.pexels.com/photos/1098982/pexels-photo-1098982.jpeg');
+        break;
+    case 34: //Spider Society
+        background.setAttribute('src', 'https://images.pexels.com/photos/761295/pexels-photo-761295.jpeg');
+        break;
+    case 35: //Teleportation Room
+        background.setAttribute('src', 'https://images.pexels.com/photos/6238608/pexels-photo-6238608.jpeg');
+        break;
+    case 36: //Mess Hall
+        background.setAttribute('src', 'https://images.pexels.com/photos/274192/pexels-photo-274192.jpeg');
+        break;
+    case 37: //Overseer's Office
+        background.setAttribute('src', 'https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg');
+        break;
 };
