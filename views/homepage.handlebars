@@ -1,7 +1,8 @@
+   {{#if logged_in}}
 <!-- First slide -->
 <div class="slide" style="color: white;">
   <h1 id ="title">Welcome to the Multiverse Protection Force, or MPF, for short.</h1>
-  <p id="description">Welcome {{users.[1].username}}! You are a seasoned MPF agent that has successfully removed numerous threats to the multiverse. As a result, the MPF trusts you to handle one of their biggest threats yet. Stopping a former MPF Agent from destroying the Space-Time Continuum. Your mission objective in simple, find the Multiversal Traveler, apprehend them, and bring them back to MPF. Alive.</p>
+  <p id="description">Welcome {{loggedInUser.name}}! You are a seasoned MPF agent that has successfully removed numerous threats to the multiverse. As a result, the MPF trusts you to handle one of their biggest threats yet. Stopping a former MPF Agent from destroying the Space-Time Continuum. Your mission objective in simple, find the Multiversal Traveler, apprehend them, and bring them back to MPF. Alive.</p>
   <button class="next-button-first-slide">Next</button>
 </div>
 
@@ -49,7 +50,12 @@
 <div id="childLocation-container" style="display: none;">
 </div>
 
+{{else}}
+<a href="/login" class="login-button">CLICK HERE TO START YOUR ADVENTURE</a>
+{{/if}}
+
 <script type="module" src="/js/homepage.js"></script>
 <script type="module" src="/js/homepage2.js"></script>
+<script type="module" src="/css/style.css"></script>
 <script type="module" src="/js/background.js"></script>
 {{!-- <script src="/js/logic.js"></script> --}}

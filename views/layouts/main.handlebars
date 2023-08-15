@@ -36,16 +36,14 @@
             <h1 class="title_name">
                 Chronoscape
             </h1>
-        </header>
     <nav>
         {{#if logged_in}}
-        <a href="/">Main</a> |
-        <a href="/profile">Profile</a> |
+        <a href="/" class="main-button">Main</a> |
+        <a href="/profile" class="profile-button">Profile</a> |
         <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
         {{/if}}
     </nav>
+        </header>
     </div>
 
     <main class="main-body" style="display: none;">

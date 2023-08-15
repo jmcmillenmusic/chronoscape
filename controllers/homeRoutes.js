@@ -52,17 +52,31 @@ router.get('/', async (req, res) => {
           ],
         },
       });
+
+
       const userData = await User.findAll({});
+      // const userData = await User.findByPk(req.session.user_id, {
+      //   attributes: { exclude: ['password'] }
+      // });
+      
   
       // Serialize data so the template can read it
       const questions = questionData.map((question) => question.get({ plain: true }));
+
+
       const users = userData.map((user) => user.get({ plain: true }));
+      // const users = userData.get({ 
+      //   plain: true,
+      // attributes: ['id', 'name', 'email', 'mpf', 'traveler', 'void'] });
     //   console.log(questions);
+
+    const logged_in = req.session.logged_in || false;
+
       
   
       // Pass serialized data and session flag into template
       res.render('homepage', { 
-        questions, users
+        questions, users, logged_in
       });
     } catch (err) {
       res.status(500).json(err);
