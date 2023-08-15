@@ -29,6 +29,4 @@ Question.init(
 
 
 
-// Question.associate = ( models ) =>{ Question.hasMany( models.answer, { foreignKey: 'answer.id', sourceKey: 'id' } ); };
-
 module.exports = Question;

@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const Card = require('../models/Card'); 
-const ContinueCard = require('../models/ContinueCard');
 const Question = require('../models/Question')
 const Ending = require('../models/Ending')
 const Answer = require('../models/Answer')
@@ -19,7 +17,7 @@ router.get('/', async (req, res) => {
               model: Location,
             },
             {
-              model: Answer, // Include child answers for the child answers
+              model: Answer, 
               as: 'ChildAnswers',
               include: [
                 {
@@ -39,21 +37,10 @@ router.get('/', async (req, res) => {
           attributes: { exclude: ['password'] }
         });
       }
-      // const userData = await User.findByPk(req.session.user_id, {
-      //   attributes: { exclude: ['password'] }
-      // });
+
       
-      
-  
-      // Serialize data so the template can read it
       const questions = questionData.map((question) => question.get({ plain: true }));
 
-
-      // const users = userData.map((user) => user.get({ plain: true }));
-      // const users = userData.get({ 
-      //   plain: true,
-      // attributes: ['id', 'name', 'email', 'mpf', 'traveler', 'void'] });
-      // console.log(questions);
 
       const user = userData ? userData.get({ 
         plain: true,
@@ -63,7 +50,6 @@ router.get('/', async (req, res) => {
     const logged_in = req.session.logged_in || false;
 
       
-  
       // Pass serialized data and session flag into template
       res.render('homepage', { 
         questions, user, logged_in
@@ -84,7 +70,7 @@ router.get('/', async (req, res) => {
               model: Location,
             },
             {
-              model: Answer, // Include child answers for the child answers
+              model: Answer, 
               as: 'ChildAnswers',
               include: [
                 {
@@ -104,10 +90,8 @@ router.get('/', async (req, res) => {
         });
       }
   
-      // Serialize data so the template can read it
       const questions = questionData.map((question) => question.get({ plain: true }));
-    //   console.log(questions);
-      
+
 
     const user = userData ? userData.get({ 
       plain: true,
@@ -134,7 +118,7 @@ router.get('/', async (req, res) => {
               model: Location,
             },
             {
-              model: Answer, // Include child answers for the child answers
+              model: Answer, 
               as: 'ChildAnswers',
               include: [
                 {
@@ -154,17 +138,14 @@ router.get('/', async (req, res) => {
         });
       }
   
-      // Serialize data so the template can read it
       const questions = questionData.map((question) => question.get({ plain: true }));
-    //   console.log(questions);
-      
+
 
     const user = userData ? userData.get({ 
       plain: true,
       attributes: ['id', 'name', 'email', 'mpf', 'traveler', 'void']
     }) : null;
 
-      // Pass serialized data and session flag into template
       res.render('route3', { 
         questions, user
       });
@@ -176,7 +157,6 @@ router.get('/', async (req, res) => {
 
   router.get('/endroute', async (req, res) => {
     try {
-      // Get all projects and JOIN with user data
       const endingData = await Ending.findAll({});
   
       let userData = null;
@@ -186,10 +166,8 @@ router.get('/', async (req, res) => {
           attributes: { exclude: ['password'] }
         });
       }
-  
-      // Serialize data so the template can read it
+
       const ending = endingData.map((ending) => ending.get({ plain: true }));
-    //   console.log(questions);
       
 
     const user = userData ? userData.get({ 
@@ -197,7 +175,6 @@ router.get('/', async (req, res) => {
       attributes: ['id', 'name', 'email', 'mpf', 'traveler', 'void']
     }) : null;
 
-      // Pass serialized data and session flag into template
       res.render('endroute', { 
         ending, user
       });

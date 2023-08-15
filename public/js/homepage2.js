@@ -4,66 +4,14 @@ const locationContainer = document.querySelector("#parentLocation-container");
 const childLocationContainer = document.querySelector("#childLocation-container");
 import { setBgImg } from './background.js';
 
-// const parentAnswer = document.querySelectorAll('.parentAnswer');
 const nextBtn = document.querySelectorAll('.next');
 
-// Add event listener for all parent buttons
-
-// Sample data (replace this with your actual data)
-const questionData = { /* ... your question data here ... */ };
-
-// const card = document.querySelector('.card__inner');
-
-// card.addEventListener('click', function () {
-//     card.classList.toggle('is-flipped');
-// });
-
-// const card2 = document.querySelector('.card__inner2');
-
-// card2.addEventListener('click', function () {
-//     card2.classList.toggle('is-flipped');
-// });
-
-// const card3 = document.querySelector('.card__inner3');
-
-// card3.addEventListener('click', function () {
-//     card3.classList.toggle('is-flipped');
-// });
-
-// Display a question and its answers
-// function displayQuestion(question) {
-//   const answersHTML = question.answers
-//     .map((answer) => `<button data-answer-id="${answer.id}">${answer.answerChoice}</button>`)
-//     .join("");
-
-//     parentQuestionContainer.innerHTML = `
-//     <h2>Question: ${question.question}</h2>
-//     <ul>${answersHTML}</ul>
-//   `;
-
-//   const answerButtons = parentQuestionContainer.querySelectorAll("button");
-//   answerButtons.forEach((button) => {
-//     button.addEventListener("click", () => {
-//       const answerId = parseInt(button.getAttribute("data-answer-id"));
-//       const selectedAnswer = question.answers.find((answer) => answer.id === answerId);
-
-//       if (selectedAnswer.ChildAnswers.length > 0) {
-//         // Display child question if available
-//         displayQuestion(selectedAnswer.ChildAnswers[0].location);
-//       } else {
-//         // Handle final state or next steps
-//         console.log("Reached a leaf answer or no child questions.");
-//       }
-//     });
-//   });
-// }
 
 const nextQuestionHandler = async function (event) {
   event.preventDefault();
 
   const answerID = event.target.getAttribute("data-answer_id");
   const url = `/api/answer/${answerID}`;
-  // console.log(answerID)
 
   const settings = {
     method: 'GET',
@@ -82,7 +30,6 @@ const nextQuestionHandler = async function (event) {
     parentAnswerContainer.style.display = 'none';
 
 
-    // console.log(data.location.locationData);
 
     // Create new elements to append to the parentLocation-Container
     const pTitle = document.createElement('p');
@@ -151,10 +98,8 @@ const nextQuestionHandler = async function (event) {
       // Append unordered list to the childContainer
       childAnswerContainer.appendChild(ul);
 
-      // console.log(childAnswer);
     }
     setBgImg(answerID);
-    // console.log(data);
   }
 }
 
@@ -166,7 +111,7 @@ let Traveler = 0;
 const endRouteHandler = async function (event) {
   const answerID = event.target.getAttribute("data-answer_id");
   const answerUrl = `/api/answer/${answerID}`;
-  // console.log(answerID)
+ 
 
   const getSettings = {
     method: 'GET',
@@ -176,22 +121,11 @@ const endRouteHandler = async function (event) {
     }
   };
 
-  // const postSettings = {
-  //   method: 'PUT',
-  //   body: JSON.stringify({MPF, Void, Traveler}),
-  //   headers: {
-  //     Accept: 'application/json',
-  //     'Content-Type': 'application/json',
-  //   }
-  // };
-
 
   if (answerID) {
     // fetch our data if there's an actual answerID
     const res = await fetch(answerUrl, getSettings);
     const data = await res.json();
-
-    // console.log(data);
 
     // Create three new elements to append into the new LocationContainer
 
@@ -205,31 +139,19 @@ const endRouteHandler = async function (event) {
     contBtn.innerHTML = 'Continue';
 
     const userID = document.querySelector('.slide').dataset.user_id;
-    // if (data.route === 'MPF'){
-    //   const response = await fetch(`/api/users/mpf/${userID}`, postSettings);
-    // }
-    // else if (data.route === 'Void'){
-    //   const response = await fetch(`/api/users/void/${userID}`, postSettings);
-    // }
-    // else if (data.route === 'Traveler'){
-    //   const response = await fetch(`/api/users/traveler/${userID}`, postSettings);
-    // }
 
     switch (data.route) {
       case 'MPF':
         MPF++;
-        console.log(MPF)
         break;
       case 'Void':
         Void++;
-        console.log(Void)
         break;
       case 'Traveler':
         Traveler++;
-        console.log(Traveler)
         break;
       default:
-        console.log('error')
+        console.log('Error')
         break;
     }
 
@@ -256,21 +178,6 @@ const endRouteHandler = async function (event) {
       } else {
         alert('Failed to update scores')
       }
-
-      // if (document.URL.includes("/route2")) {
-      //   document.location.replace('/route3');
-      // }
-      // else if (document.URL.includes("/route3")) {
-      //   const response = await fetch(`/api/users/${userID}`, postSettings)
-      //   if (response.ok)
-      //   {
-      //     document.location.replace('/endRoute');
-      //   } else
-      //   alert ('Failed to update scores')
-
-      // } else {
-      //   document.location.replace('/route2');
-      // }
     });
 
     childLocationContainer.appendChild(pTitle);
@@ -293,6 +200,3 @@ const showNewQuestions = async function (event) {
 for (let i = 0; i < nextBtn.length; i++) {
   nextBtn[i].addEventListener('click', nextQuestionHandler);
 }
-
-// Start by displaying the first question
-// displayQuestion(questionData.answers[0].location);

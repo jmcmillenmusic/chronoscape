@@ -2,12 +2,12 @@
 <!-- First slide -->
 <div class="slide" style="color: white;" data-user_id="{{user.id}}">
   <h1 id ="title">Welcome to the Multiverse Protection Force, or MPF, for short.</h1>
-  <p id="description">Welcome {{user.name}}! This is the user id: {{user.id}} . You are a seasoned MPF agent that has successfully removed numerous threats to the multiverse. As a result, the MPF trusts you to handle one of their biggest threats yet. Stopping a former MPF Agent from destroying the Space-Time Continuum. Your mission objective in simple, find the Multiversal Traveler, apprehend them, and bring them back to MPF. Alive.</p>
+  <p id="description">Welcome {{user.name}}! You are a seasoned MPF agent that has successfully removed numerous threats to the multiverse. As a result, the MPF trusts you to handle one of their biggest threats yet. Stopping a former MPF Agent from destroying the Space-Time Continuum. Your mission objective in simple, find the Multiversal Traveler, apprehend them, and bring them back to MPF. Alive.</p>
   <button class="next-button-first-slide">Next</button>
 </div>
 
 
-{{!-- Shows first quesiton --}}
+{{!-- Shows first question --}}
 <div id="parentAnswer-container" style="display: none;">
   <h2 class="main-question">Question: {{questions.[0].question}}</h2>
   <ul class="answerChoices">
@@ -21,30 +21,12 @@
             </div>
           </div>
         </Button>
-        {{!-- <ul>
-          <li>Location Title: {{this.location.locationTitle}}</li>
-          <li>Location Data: {{this.location.locationData}}</li>
-          {{#if this.ChildAnswers}}
-            <ul>
-              {{#each this.ChildAnswers}}
-                <li>
-                  <Button class="next" data-answer_id={{this.id}}>Child Answer Choice: {{this.answerChoice}}</Button>
-                  <ul>
-                    <li>Child Location Title: {{this.location.locationTitle}}</li>
-                    <li>Child Location Data: {{this.location.locationData}}</li>
-                  </ul>
-                </li>
-              {{/each}}
-            </ul>
-          {{/if}}
-        </ul> --}}
       </li>
     {{/each}}
   </ul>
 </div>
 
 <div id="parentLocation-container" style="display: none;">
-  {{!-- <button class="continue">Continue</button> --}}
 </div>
 
 <div id="childAnswer-container" style="display: none;">
@@ -61,4 +43,4 @@
 <script type="module" src="/js/homepage2.js"></script>
 <script type="module" src="/css/style.css"></script>
 <script type="module" src="/js/background.js"></script>
-{{!-- <script src="/js/logic.js"></script> --}}
+

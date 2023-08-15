@@ -31,3 +31,7 @@ You can download our repo from our repo page using the following command in git 
 or you can visit our page below
 
 (HEROKU PAGE GOES HERE) - Deploy Page
+
+## Credits
+
+Anime.Js - https://animejs.com/
