@@ -1,42 +1,29 @@
+<div class="slide" style="color: white;" data-user_id="{{user.id}}">
+  <p id="description">As you turn to take the portal behind you back home, another portal opens up behind you! You turn and look, and the traveler comes rushing through the portal. This is your chance! It's time to take a stand and end this chase once and for all!</p>
+  <button class="newEnding">Next</button>
+</div>
+
 {{!-- Shows first question --}}
-<div id="parentAnswer-container">
-  <h2 class="main-question">Question: {{questions.[8].question}}</h2>
-  <ul>
-    {{#each questions.[12].answers}}
-      <li class="parentAnswer">
-        <Button class="next" data-answer_id={{this.id}}>{{this.answerChoice}}</Button>
-        {{!-- <ul>
-          <li>Location Title: {{this.location.locationTitle}}</li>
-          <li>Location Data: {{this.location.locationData}}</li>
-          {{#if this.ChildAnswers}}
-            <ul>
-              {{#each this.ChildAnswers}}
-                <li>
-                  <Button class="next" data-answer_id={{this.id}}>Child Answer Choice: {{this.answerChoice}}</Button>
-                  <ul>
-                    <li>Child Location Title: {{this.location.locationTitle}}</li>
-                    <li>Child Location Data: {{this.location.locationData}}</li>
-                  </ul>
-                </li>
-              {{/each}}
-            </ul>
-          {{/if}}
-        </ul> --}}
-      </li>
-    {{/each}}
-  </ul>
+<div id="ending-void" style="display: none;">
+  <p>{{ending.[0].endingType}}</p>
+  <p>{{ending.[0].endingText}}</p>
 </div>
 
-<div id="parentLocation-container" style="display: none;">
-  {{!-- <button class="continue">Continue</button> --}}
+<div id="ending-MPF" style="display: none;">
+  <p>{{ending.[1].endingType}}</p>
+  <p>{{ending.[1].endingText}}</p>
 </div>
 
-<div id="childAnswer-container" style="display: none;">
+<div id="ending-traveler" style="display: none;">
+  <p>{{ending.[2].endingType}}</p>
+  <p>{{ending.[2].endingText}}</p>
 </div>
 
-<div id="childLocation-container" style="display: none;">
+<div id="ending-good" style="display: none;">
+  <p>{{ending.[3].endingType}}</p>
+  <p>{{ending.[3].endingText}}</p>
 </div>
 
-<script src="/js/homepage.js"></script>
-<script type="module" src="/js/homepage2.js"></script>
+{{!-- <script src="/js/background.js"></script> --}}
+<script type="module" src="/js/endings.js"></script>
 {{!-- <script src="/js/logic.js"></script> --}}
