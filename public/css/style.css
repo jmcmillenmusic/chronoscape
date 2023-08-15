@@ -80,9 +80,6 @@ body {
   }
 }
 
-
-
-
 header {
   position: absolute;
   top: 10%; right: 0; left: 0;
@@ -130,7 +127,6 @@ header {
   text-align: center;
   margin-top: 30px;
 }
-
 
 .card__inner,
 .card__inner2,
@@ -229,4 +225,23 @@ header {
   left: 0;
   min-width: 100%;
   min-height: 100%;
+}
+
+.slide {
+  width: 50%;
+  margin: auto;
+}
+
+.main-question {
+  color: white;
+}
+
+#parentLocation-container, #childLocation-container {
+  color: white;
+  width: 50%;
+  margin: auto;
+}
+
+.darken {
+  filter: brightness(50%);
 }
