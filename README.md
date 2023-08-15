@@ -6,8 +6,7 @@
 Welcome to the Multiverse Protection Force. As an agent of MPF, you will be tasked with protecting the multiverse from any threats that will try to harm it. This means ensuring that events happen as they should, and apprehending anyone who may be considered a universal threat. You are a seasoned MPF agent that has successfully removed numerous threats to the multiverse. As a result, the MPF trusts you to handle one of their biggest threats yet. Stopping a former MPF Agent from destroying the Space-Time Continuum Your mission objective in simple, find the Multiversal Traveler, apprehend them, and bring them back to MPF. Alive.
 
 
-<!-- wILL REPLACE BOTTOM WITH PROPER IMAGES WHEN READY -->
-<!-- <img src="./assets/images/read-me-img4.jpg"/> -->
+<img src="./assets/images/image1.jpg"/>
 
 ChronoScape is a choose your path game that has over 40 locations to travel to. Explore the dangerous city of Gotham, or pay a visit to the Village Hidden in the Leaves. It's your path to choose, just don't forget your mission.
 
