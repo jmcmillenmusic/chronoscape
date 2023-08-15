@@ -125,4 +125,16 @@ switch (questions.id) {
     case 37: //Overseer's Office
         background.setAttribute('src', 'https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg');
         break;
+    default:
+        break;
+};
+
+// Switch/case to set the background image's source based on the player's choices and the ending they receive
+switch (ending) {
+    case 1: // Good Ending
+        background.setAttribute('src', 'https://images.pexels.com/photos/3935333/pexels-photo-3935333.jpeg');
+        break;
+    default: // All bad endings
+        background.setAttribute('src', 'https://images.pexels.com/photos/963486/pexels-photo-963486.jpeg')
+        break;  
 };
