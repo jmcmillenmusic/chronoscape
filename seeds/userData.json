@@ -1,15 +1,26 @@
-[ 
+[
   {
-    "username": "Uzumaki Naruto",
-    "mpf": "1",
-    "traveler": "0",
-    "void": "2"
+    "name": "Sal",
+    "email": "sal@hotmail.com",
+    "password": "password12345",
+    "mpf": 0,
+    "traveler": 0,
+    "void": 0
   },
   {
-    "username": "Kirisaki Chitoge",
-    "mpf": "1",
-    "traveler": "1",
-    "void": "1"
+    "name": "Lernantino",
+    "email": "lernantino@gmail.com",
+    "password": "password12345",
+    "mpf": 0,
+    "traveler": 0,
+    "void": 0
+  },
+  {
+    "name": "Amiko",
+    "email": "amiko2k20@aol.com",
+    "password": "password12345",
+    "mpf": 0,
+    "traveler": 0,
+    "void": 0
   }
 ]
-

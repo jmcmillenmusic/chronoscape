@@ -24,9 +24,18 @@
             Chronoscape
         </h1>
     </header>
+    <nav>
+        {{#if logged_in}}
+        <a href="/">Main</a> |
+        <a href="/profile">Profile</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+    </nav>
 
     <main>
-        <div class="animate__animated animate__backInLeft">
+        {{!-- <div class="animate__animated animate__backInLeft">
             <div class="card__inner">
                 <div class="card__face card__face--front">
                     {{{ body }}}
@@ -41,7 +50,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
+        {{{body}}}
     </main>
 {{!-- 
     <main class="card animate__animated animate__backInDown">
@@ -81,6 +91,10 @@
     </main> --}}
 
     <script src="/js/background.js"></script>
+
+{{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 
 </body>
 </html>

@@ -14,9 +14,9 @@ const questionData = { /* ... your question data here ... */ };
 
 const card = document.querySelector('.card__inner');
 
-card.addEventListener('click', function () {
-    card.classList.toggle('is-flipped');
-});
+// card.addEventListener('click', function () {
+//     card.classList.toggle('is-flipped');
+// });
 
 // const card2 = document.querySelector('.card__inner2');
 
