@@ -1,9 +1,23 @@
-const background = document.getElementById('background-image');
+const background = document.querySelector('#background-image');
+const headerSec = document.querySelector('.hero-sec');
+const mainSec = document.querySelector('.main-body');
 
 // Set the initial background image when the player starts the game
 background.setAttribute('src', 'https://images.pexels.com/photos/96381/pexels-photo-96381.jpeg');
 
 // Switch/case to compare which question the player is on and set the background image source based on their location in the story
+$(window).on('load', function() {
+    // Animate loader off screen
+    function complete() {
+        $(".loader").hide();
+        headerSec.style.display = 'block';
+        mainSec.style.display = 'block';
+    }
+    setTimeout(complete, 3000)
+});
+
+// 
+
 switch (questions.id) {
     case 2: //Berlin
         background.setAttribute('src', 'https://images.pexels.com/photos/11477798/pexels-photo-11477798.jpeg');
