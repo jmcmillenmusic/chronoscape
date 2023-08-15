@@ -9,7 +9,7 @@ background.setAttribute('src', 'https://images.pexels.com/photos/96381/pexels-ph
 $(window).on('load', function() {
     // Animate loader off screen
     function complete() {
-        $(".loader").fadeOut( 500, "linear");
+        $(".loader").hide();
         headerSec.style.display = 'block';
         mainSec.style.display = 'block';
     }
