@@ -6,7 +6,7 @@ const questions = require('./questionData.json');
 const answers = require('./answersData.json');
 const locations = require('./locationData.json');
 const users = require('./userData.json');
-const endings = require('./endingData.json');
+const ending = require('./endingData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -35,7 +35,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const endings = await Ending.bulkCreate(endings, {
+  const endings = await Ending.bulkCreate(ending, {
     returning: true,
   });
     
