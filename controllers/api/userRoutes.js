@@ -40,7 +40,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
+
       res.json({ user: userData, message: 'You are now logged in!' });
     });
 
@@ -48,6 +48,42 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// // Get a specific user by ID
+// router.put('/:id', async (req, res) => {
+//   const userID = req.params.id;
+//   // const { MPF } = req.body;
+//   try {
+//     const user = await User.update(req.body, {
+//       where: {
+//         id: userID
+//       },
+//     });
+//     res.status(200).json(user);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+router.put('/:id', async (req, res) => {
+  const userID = req.params.id;
+
+  try {
+    const user = await User.findByPk(userID);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    user.mpf += 1
+    await user.save();
+
+    // res.redirect('/route2');
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
