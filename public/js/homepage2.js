@@ -63,7 +63,7 @@ const nextQuestionHandler = async function (event) {
 
   const answerID = event.target.getAttribute("data-answer_id");
   const url = `/api/answer/${answerID}`;
-  console.log(answerID)
+  // console.log(answerID)
 
   const settings = {
     method: 'GET',
@@ -133,7 +133,7 @@ const nextQuestionHandler = async function (event) {
       const button = document.createElement('button')
 
       // Set button's innerHTML to a div containing the card styling.
-      button.innerHTML =`
+      button.innerHTML = `
       <div class="content-container">
         <p>${childAnswer}</p>
         <div class="darken-cards next card__face card__face--front">
@@ -151,17 +151,22 @@ const nextQuestionHandler = async function (event) {
       // Append unordered list to the childContainer
       childAnswerContainer.appendChild(ul);
 
-      console.log(childAnswer);
+      // console.log(childAnswer);
     }
     setBgImg(answerID);
-    console.log(data);
+    // console.log(data);
   }
 }
+
+
+let MPF = 0;
+let Void = 0;
+let Traveler = 0;
 
 const endRouteHandler = async function (event) {
   const answerID = event.target.getAttribute("data-answer_id");
   const answerUrl = `/api/answer/${answerID}`;
-  console.log(answerID)
+  // console.log(answerID)
 
   const getSettings = {
     method: 'GET',
@@ -171,13 +176,14 @@ const endRouteHandler = async function (event) {
     }
   };
 
-  const postSettings = {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    }
-  };
+  // const postSettings = {
+  //   method: 'PUT',
+  //   body: JSON.stringify({MPF, Void, Traveler}),
+  //   headers: {
+  //     Accept: 'application/json',
+  //     'Content-Type': 'application/json',
+  //   }
+  // };
 
 
   if (answerID) {
@@ -185,7 +191,7 @@ const endRouteHandler = async function (event) {
     const res = await fetch(answerUrl, getSettings);
     const data = await res.json();
 
-    console.log(data);
+    // console.log(data);
 
     // Create three new elements to append into the new LocationContainer
 
@@ -198,21 +204,75 @@ const endRouteHandler = async function (event) {
 
     contBtn.innerHTML = 'Continue';
 
-    if (data.route === 'MPF'){
-      const response = await fetch(`/api/users/${blogId}`, postSettings);
+    const userID = document.querySelector('.slide').dataset.user_id;
+    // if (data.route === 'MPF'){
+    //   const response = await fetch(`/api/users/mpf/${userID}`, postSettings);
+    // }
+    // else if (data.route === 'Void'){
+    //   const response = await fetch(`/api/users/void/${userID}`, postSettings);
+    // }
+    // else if (data.route === 'Traveler'){
+    //   const response = await fetch(`/api/users/traveler/${userID}`, postSettings);
+    // }
+
+    switch (data.route) {
+      case 'MPF':
+        MPF++;
+        console.log(MPF)
+        break;
+      case 'Void':
+        Void++;
+        console.log(Void)
+        break;
+      case 'Traveler':
+        Traveler++;
+        console.log(Traveler)
+        break;
+      default:
+        console.log('error')
+        break;
     }
 
+    contBtn.addEventListener('click', async function () {
 
-    contBtn.addEventListener('click', function () {
-      if (document.URL.includes("/route2")) {
-        document.location.replace('/route3');
-      }
-      else if (document.URL.includes("/route3")) {
-        document.location.replace('/endRoute');
+      const response = await fetch(`/api/users/${userID}`, {
+        method: 'PUT',
+        body: JSON.stringify({ MPF, Void, Traveler }),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }
+      })
+      if (response.ok) {
+        if (document.URL.includes("/route2")) {
+          document.location.replace('/route3');
+
+        } else if (document.URL.includes("/route3")) {
+          document.location.replace('/endRoute');
+        }
+        else {
+          document.location.replace('/route2');
+        }
       } else {
-        document.location.replace('/route2');
+        alert('Failed to update scores')
       }
+
+      // if (document.URL.includes("/route2")) {
+      //   document.location.replace('/route3');
+      // }
+      // else if (document.URL.includes("/route3")) {
+      //   const response = await fetch(`/api/users/${userID}`, postSettings)
+      //   if (response.ok)
+      //   {
+      //     document.location.replace('/endRoute');
+      //   } else
+      //   alert ('Failed to update scores')
+
+      // } else {
+      //   document.location.replace('/route2');
+      // }
     });
+
     childLocationContainer.appendChild(pTitle);
     childLocationContainer.appendChild(pData);
     childLocationContainer.appendChild(contBtn);
@@ -222,6 +282,7 @@ const endRouteHandler = async function (event) {
   childLocationContainer.style.display = 'block';
   setBgImg(answerID);
 }
+
 
 // Simply hides the parent Location container and shows the child answers
 const showNewQuestions = async function (event) {
