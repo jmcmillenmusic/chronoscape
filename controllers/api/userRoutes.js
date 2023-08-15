@@ -2,6 +2,27 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 
+// Get a specific card by ID
+router.get('/:id', async (req, res) => {
+  const userID = req.params.id;
+  try {
+    const user = await User.findByPk(userID, {
+      raw: false,
+      attributes: { exclude: ['password'] }
+    });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -68,7 +89,6 @@ router.post('/login', async (req, res) => {
 router.put('/:id', async (req, res) => {
   const userID = req.params.id;
   const scores = req.body;
-  console.log(scores)
   try {
     const user = await User.findByPk(userID);
 
@@ -82,7 +102,6 @@ router.put('/:id', async (req, res) => {
     
     await user.save();
     res.status(200).json(user);
-    console.log('This is the users MPF score:' + user.mpf)
     // res.redirect('/route2');
 
   } catch (err) {

@@ -3,6 +3,7 @@ const withAuth = require('../utils/auth');
 const Card = require('../models/Card'); 
 const ContinueCard = require('../models/ContinueCard');
 const Question = require('../models/Question')
+const Ending = require('../models/Ending')
 const Answer = require('../models/Answer')
 const Location = require('../models/Location')
 const User = require('../models/User')
@@ -171,6 +172,42 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+
+  router.get('/endroute', async (req, res) => {
+    try {
+      // Get all projects and JOIN with user data
+      const endingData = await Ending.findAll({});
+  
+      let userData = null;
+      if(req.session.user_id)
+      {
+        userData = await User.findByPk(req.session.user_id, {
+          attributes: { exclude: ['password'] }
+        });
+      }
+  
+      // Serialize data so the template can read it
+      const ending = endingData.map((ending) => ending.get({ plain: true }));
+    //   console.log(questions);
+      
+
+    const user = userData ? userData.get({ 
+      plain: true,
+      attributes: ['id', 'name', 'email', 'mpf', 'traveler', 'void']
+    }) : null;
+
+      // Pass serialized data and session flag into template
+      res.render('endroute', { 
+        ending, user
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+
+
   router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
