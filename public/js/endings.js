@@ -3,11 +3,12 @@ const voidEnding = document.querySelector('#ending-void');
 const mpfEnding = document.querySelector('#ending-MPF');
 const travelerEnding = document.querySelector('#ending-traveler');
 const goodEnding = document.querySelector('#ending-good');
+const endingSetup =  document.querySelector('.slide');
 
 const endingHandler = async function (event) {
   event.preventDefault();
 
-  const userID = document.querySelector('.slide').dataset.user_id;
+  const userID = endingSetup.dataset.user_id;
   const userURL = `/api/users/${userID}`;
   console.log(userID)
 
@@ -26,8 +27,9 @@ const endingHandler = async function (event) {
 
     console.log(data.void);
 
-    if (data.void >= 2)
-    {
+    endingSetup.style.display = 'none'
+
+    if (data.void >= 2){
       voidEnding.style.display = 'block';
     } else if (data.mpf >= 2) {
       mpfEnding.style.display = 'block';
