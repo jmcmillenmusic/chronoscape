@@ -126,14 +126,19 @@ const nextQuestionHandler = async function (event) {
 
       // set a const to the childAnswer's text
       const childAnswer = data.ChildAnswers[i].answerChoice;
+      const childID = data.ChildAnswers[i].id;
+      const childImg = data.ChildAnswers[i].imgLink;
 
       // creates new buttons elements that will be appended to the childAnswer-container
       const button = document.createElement('button')
 
       // Set button's innerHTML to a div containing the card styling.
-      button.innerHTML = `
-      <div class="next card__face card__face--front"  data-answer_id=${data.ChildAnswers[i].id}>
-        ${childAnswer}
+      button.innerHTML =`
+      <div class="content-container">
+        <p>${childAnswer}</p>
+        <div class="darken-cards next card__face card__face--front">
+          <img class="cardImg" src="${childImg}"  data-answer_id=${childID}></img>
+        </div>
       </div>`;
       button.classList.add('card');
       ul.classList.add('answerChoices')
@@ -155,10 +160,10 @@ const nextQuestionHandler = async function (event) {
 
 const endRouteHandler = async function (event) {
   const answerID = event.target.getAttribute("data-answer_id");
-  const url = `/api/answer/${answerID}`;
+  const answerUrl = `/api/answer/${answerID}`;
   console.log(answerID)
 
-  const settings = {
+  const getSettings = {
     method: 'GET',
     headers: {
       Accept: 'application/json',
@@ -166,9 +171,18 @@ const endRouteHandler = async function (event) {
     }
   };
 
+  const postSettings = {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    }
+  };
+
+
   if (answerID) {
     // fetch our data if there's an actual answerID
-    const res = await fetch(url, settings);
+    const res = await fetch(answerUrl, getSettings);
     const data = await res.json();
 
     console.log(data);
@@ -183,7 +197,12 @@ const endRouteHandler = async function (event) {
     pData.innerHTML = data.location.locationData;
 
     contBtn.innerHTML = 'Continue';
-    
+
+    if (data.route === 'MPF'){
+      const response = await fetch(`/api/users/${blogId}`, postSettings);
+    }
+
+
     contBtn.addEventListener('click', function () {
       if (document.URL.includes("/route2")) {
         document.location.replace('/route3');

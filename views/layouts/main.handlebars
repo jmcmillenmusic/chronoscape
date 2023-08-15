@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="/css/jass.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
     {{!--
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -36,13 +39,13 @@
             <h1 class="title_name">
                 Chronoscape
             </h1>
-    <nav>
-        {{#if logged_in}}
-        <a href="/" class="main-button">Main</a> |
-        <a href="/profile" class="profile-button">Profile</a> |
-        <button class="no-button" id="logout">Logout</button>
-        {{/if}}
-    </nav>
+            <nav>
+                {{#if logged_in}}
+                <a href="/" class="main-button">Main</a> |
+                <a href="/profile" class="profile-button">Profile</a> |
+                <button class="no-button" id="logout">Logout</button>
+                {{/if}}
+            </nav>
         </header>
     </div>
 
@@ -107,9 +110,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <script type="module" src="/js/background.js"></script>
 
-{{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 
 </body>
 

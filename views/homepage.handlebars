@@ -14,8 +14,11 @@
     {{#each questions.[0].answers}}
       <li style="display:inline-block;">
         <Button class="card">
-          <div class="next card__face card__face--front" data-answer_id={{this.id}}>
-            {{this.answerChoice}}
+          <div class="content-container">
+            <p>{{this.answerChoice}}</p>
+            <div class="darken-cards next card__face card__face--front">
+              <img class="cardImg" src="{{this.imgLink}}"  data-answer_id={{this.id}}></img>
+            </div>
           </div>
         </Button>
         {{!-- <ul>
