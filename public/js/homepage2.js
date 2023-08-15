@@ -8,7 +8,6 @@ const nextBtn = document.querySelectorAll('.next');
 
 // Add event listener for all parent buttons
 
-
 // Sample data (replace this with your actual data)
 const questionData = { /* ... your question data here ... */ };
 
@@ -58,9 +57,6 @@ const questionData = { /* ... your question data here ... */ };
 //   });
 // }
 
-
-
-
 const nextQuestionHandler = async function (event) {
   event.preventDefault();
 
@@ -100,8 +96,6 @@ const nextQuestionHandler = async function (event) {
     newNextBtn.innerHTML = 'Continue';
     newNextBtn.addEventListener('click', showNewQuestions);
 
-
-
     // Append the title, data and continue button to the locationContainer 
     locationContainer.appendChild(pTitle);
     locationContainer.appendChild(pData);
@@ -134,7 +128,6 @@ const nextQuestionHandler = async function (event) {
 
       // creates new buttons elements that will be appended to the childAnswer-container
       const button = document.createElement('button')
-
 
       // Set button's innerHTML to a div containing the card styling.
       button.innerHTML = `
@@ -210,25 +203,17 @@ const endRouteHandler = async function (event) {
 
 }
 
-
-
 // Simply hides the parent Location container and shows the child answers
 const showNewQuestions = async function (event) {
   locationContainer.style.display = 'none';
   childAnswerContainer.style.display = 'block';
 }
 
-
-
-
-
-
 for (let i = 0; i < nextBtn.length; i++) {
   nextBtn[i].addEventListener('click', nextQuestionHandler);
 }
 
-
-
+// module.exports = homepage2;
 
 // Start by displaying the first question
 // displayQuestion(questionData.answers[0].location);
