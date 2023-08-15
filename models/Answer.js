@@ -15,8 +15,11 @@ Answer.init(
     answerChoice: {
       type: DataTypes.TEXT,
     },
-    ImgLink: {
+    imgLink: {
       type: DataTypes.TEXT,
+    },
+    route: {
+      type: DataTypes.TEXT
     },
     question_id: {
       type: DataTypes.INTEGER,
