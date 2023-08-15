@@ -4,6 +4,7 @@ const Question = require('./Question'); // Updated model name
 const Answer = require('./Answer'); // Updated model name
 const Location = require('./Location');
 const User = require('./User');
+const Ending = require('./Ending');
 
 Question.hasMany(Answer, {
   foreignKey: 'question_id',
@@ -36,4 +37,4 @@ Location.belongsTo(Answer, {
   onDelete: 'CASCADE',
 });
 
-module.exports = { Card, ContinueCard, Question, Answer, Location, User };
+module.exports = { Card, ContinueCard, Question, Answer, Location, User, Ending };
