@@ -1,6 +1,7 @@
 const buttonElement = document.querySelector('.next-button-first-slide');
 const title = document.getElementById('title');
 const description = document.getElementById('description');
+const parentAnswerContainer = document.querySelector("#parentAnswer-container");
 
 let clickCount = 0;
 

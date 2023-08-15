@@ -2,6 +2,7 @@ const parentAnswerContainer = document.querySelector("#parentAnswer-container");
 const childAnswerContainer = document.querySelector("#childAnswer-container");
 const locationContainer = document.querySelector("#parentLocation-container");
 const childLocationContainer = document.querySelector("#childLocation-container");
+import { setBgImg } from './background.js';
 
 // const parentAnswer = document.querySelectorAll('.parentAnswer');
 const nextBtn = document.querySelectorAll('.next');
@@ -147,7 +148,7 @@ const nextQuestionHandler = async function (event) {
 
       console.log(childAnswer);
     }
-
+    setBgImg(answerID);
     console.log(data);
   }
 }
@@ -212,8 +213,6 @@ const showNewQuestions = async function (event) {
 for (let i = 0; i < nextBtn.length; i++) {
   nextBtn[i].addEventListener('click', nextQuestionHandler);
 }
-
-// module.exports = homepage2;
 
 // Start by displaying the first question
 // displayQuestion(questionData.answers[0].location);
