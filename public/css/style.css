@@ -97,6 +97,14 @@ body {
 
 .darken-cards {
   filter: brightness(0.7);
+  -webkit-transition: margin 0.5s ease-out;
+  -moz-transition: margin 0.5s ease-out;
+  -o-transition: margin 0.5s ease-out;
+}
+
+.darken-cards:hover{
+  box-shadow: #000;
+  margin-top: 40px;
 }
 
 header {
@@ -107,9 +115,10 @@ header {
   margin: auto;
 }
 
-h1 {
+/* h1 {
   font-family: 'Kanit', sans-serif;
-}
+} */
+
 
 .main-body {
   position: absolute;
@@ -146,12 +155,15 @@ h1 {
   background: transparent;
 }
 
+
+
 /* Added by Edi  */
 .answerChoices {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
+
 
 .main-question {
   text-align: center;
@@ -214,12 +226,23 @@ h1 {
   align-items: center;
   justify-content: center;
   height: 100%;
+  /* -webkit-transition: margin 0.5s ease-out;
+    -moz-transition: margin 0.5s ease-out;
+    -o-transition: margin 0.5s ease-out; */
 }
+
+.content-container:hover {
+  /* box-shadow: #000;
+  margin-top: 10px; */
+}
+
 
 .cardImg {
   height: 100%;
   width: 100%;
 }
+
+
 
 .card__face--front h2 {
   color: white;
@@ -303,7 +326,7 @@ h1 {
   font-size: 20px;
   padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
+  font-size: 20px;
   display: inline-block;
   cursor: pointer;
   border-radius: 20px;
@@ -343,4 +366,21 @@ font-size: 20px;
 
 .titleLocation {
   font-size: 32px;
+}
+
+.continue {
+  justify-content: center;
+  text-align: center;
+  margin-left: 43%;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 15px 32px;
+}
+
+.newEnding {
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 15px 32px;
 }
