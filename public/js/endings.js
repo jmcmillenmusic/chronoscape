@@ -5,6 +5,7 @@ const travelerEnding = document.querySelector('#ending-traveler');
 const goodEnding = document.querySelector('#ending-good');
 const endingSetup =  document.querySelector('.slide');
 
+
 const endingHandler = async function (event) {
   event.preventDefault();
 
@@ -40,6 +41,18 @@ const endingHandler = async function (event) {
   }
 }
 
+const restartStory = async function (event) {
+  event.preventDefault()
+  document.location.replace('/')
+}
+
 document.
   querySelector('.newEnding').
   addEventListener('click', endingHandler);
+
+const contBtn = document.querySelectorAll('.continue');
+
+for (let i = 0; i < contBtn.length; i++) {
+  contBtn[i].addEventListener('click', restartStory)
+  
+}
