@@ -38,10 +38,12 @@ const nextQuestionHandler = async function (event) {
 
     // Get location data and set them to the new elements
     pTitle.innerHTML = data.location.locationTitle;
+    pTitle.classList.add('titleLocation');
     pData.innerHTML = data.location.locationData;
 
     // Sets the innerHTML to Continue, and adds eventListener.
     newNextBtn.innerHTML = 'Continue';
+    newNextBtn.classList.add('continue');
     newNextBtn.addEventListener('click', showNewQuestions);
 
     // Append the title, data and continue button to the locationContainer 
@@ -134,10 +136,12 @@ const endRouteHandler = async function (event) {
     const contBtn = document.createElement('button');
 
     pTitle.innerHTML = data.location.locationTitle;
-    pTitle.classList.add('titleLocation')
+    pTitle.classList.add('titleLocation');
     pData.innerHTML = data.location.locationData;
 
+
     contBtn.innerHTML = 'Continue';
+    contBtn.classList.add('continue');
 
     const userID = document.querySelector('.slide').dataset.user_id;
 
