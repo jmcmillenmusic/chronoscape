@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: 'Poppins','Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif, sans-serif;
+  font-family: 'Poppins', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif, sans-serif;
   width: 100%;
   min-height: 100vh;
   /* background-image: url("./image/giphy\ \(1\).gif");
@@ -20,11 +20,11 @@ body {
 
 .hero-sec {
   position: relative;
-  background: transparent;  
+  background: transparent;
 }
 
 .loader {
-	height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,27 +43,35 @@ body {
 .wave:nth-child(2) {
   animation-delay: 0.1s;
 }
+
 .wave:nth-child(3) {
   animation-delay: 0.2s;
 }
+
 .wave:nth-child(4) {
   animation-delay: 0.3s;
 }
+
 .wave:nth-child(5) {
   animation-delay: 0.4s;
 }
+
 .wave:nth-child(6) {
   animation-delay: 0.5s;
 }
+
 .wave:nth-child(7) {
   animation-delay: 0.6s;
 }
+
 .wave:nth-child(8) {
   animation-delay: 0.7s;
 }
+
 .wave:nth-child(9) {
   animation-delay: 0.8s;
 }
+
 .wave:nth-child(10) {
   animation-delay: 0.9s;
 }
@@ -72,9 +80,11 @@ body {
   0% {
     transform: scale(0);
   }
+
   50% {
     transform: scale(1);
   }
+
   100% {
     transform: scale(0);
   }
@@ -89,16 +99,23 @@ body {
   filter: brightness(0.7);
 }
 
-
 header {
   position: absolute;
-  top: 10%; right: 0; left: 0;
+  top: 10%;
+  right: 0;
+  left: 0;
   margin: auto;
+}
+
+h1 {
+  font-family: 'Kanit', sans-serif;
 }
 
 .main-body {
   position: absolute;
-  top: 30%; right: 0; left: 0;
+  top: 30%;
+  right: 0;
+  left: 0;
   margin: auto;
 }
 
@@ -107,12 +124,15 @@ header {
   z-index: 1;
   width: 100%;
   height: 100%;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
 }
 
-.title_name{
+.title_name {
   text-align: center;
   color: white;
-  
+  font-size: 50px;
+
 }
 
 .card {
@@ -163,8 +183,8 @@ header {
 }
 
 .card__face {
-  /* position: absolute; */ 
-  width: 100%;  
+  /* position: absolute; */
+  width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -180,7 +200,7 @@ header {
   justify-content: center;
 }
 
-.card p{
+.card p {
   color: white;
   position: absolute;
   margin: 0 auto;
@@ -196,7 +216,7 @@ header {
   height: 100%;
 }
 
-.cardImg{
+.cardImg {
   height: 100%;
   width: 100%;
 }
@@ -241,11 +261,11 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none; 
+  text-decoration: none;
   padding-top: 150px;
 }
 
-.main-body{
+.main-body {
   color: #F3F3F3;
 }
 
@@ -268,7 +288,8 @@ header {
   color: white;
 }
 
-#parentLocation-container, #childLocation-container {
+#parentLocation-container,
+#childLocation-container {
   color: white;
   width: 50%;
   margin: auto;
@@ -276,4 +297,50 @@ header {
 
 .darken {
   filter: brightness(50%);
+}
+
+.next-button-first-slide {
+  font-size: 20px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+}
+
+.next-button-first-slide:hover{
+  background-color: #1b89bc;
+
+}
+
+.slide {
+  justify-content: center;
+  text-align: center;
+}
+
+.navBar {
+padding-left: 32px;
+font-size: 20px;
+}
+
+.no-button {
+  padding: 15px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+}
+
+.no-button:hover {
+  background-color: #1b89bc;
+}
+
+.titleLocation {
+  font-size: 32px;
 }
