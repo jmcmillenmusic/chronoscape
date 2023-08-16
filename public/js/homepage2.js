@@ -38,7 +38,6 @@ const nextQuestionHandler = async function (event) {
 
     // Get location data and set them to the new elements
     pTitle.innerHTML = data.location.locationTitle;
-    pTitle.classList.add('titleLocation')
     pData.innerHTML = data.location.locationData;
 
     // Sets the innerHTML to Continue, and adds eventListener.
