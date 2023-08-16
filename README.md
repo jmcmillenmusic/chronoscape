@@ -30,7 +30,7 @@ You can download our repo from our repo page using the following command in git 
 
 or you can visit our page below
 
-(HEROKU PAGE GOES HERE) - Deploy Page
+https://chronoscape-g3-dd74e8283e15.herokuapp.com/ - Deploy Page
 
 ## Credits
 
