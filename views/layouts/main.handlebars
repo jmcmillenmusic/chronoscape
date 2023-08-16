@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Rajdhani:wght@500&display=swap"
+        rel="stylesheet">
 </head>
 
 
@@ -28,17 +32,17 @@
 
     <div class="hero-sec" style="display: none;">
         <img class="darken" id="background-image" src=""></img>
-        <header class="animate__animated animate__rollIn">
-            <h1 class="title_name">
-                Chronoscape
-            </h1>
-            <nav>
+        <header>
+            <nav class="navBar animate__animated animate__slideInLeft">
                 {{#if logged_in}}
                 <a href="/" class="main-button">Main</a> |
                 <a href="/profile" class="profile-button">Profile</a> |
                 <button class="no-button" id="logout">Logout</button>
                 {{/if}}
             </nav>
+            <h1 class="title_name animate__animated animate__slideInDown">
+                Chronoscape
+            </h1>
         </header>
     </div>
 

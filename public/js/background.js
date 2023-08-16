@@ -8,7 +8,7 @@ background.setAttribute('src', 'https://images.pexels.com/photos/96381/pexels-ph
 $(window).on('load', function() {
     // Animate loader off screen
     function complete() {
-        $(".loader").fadeOut(1000);
+        $(".loader").fadeOut(100);
         headerSec.style.display = 'block';
         mainSec.style.display = 'block';
     }
@@ -22,7 +22,7 @@ function setBgImg(answerID) {
             background.setAttribute('src', 'https://images.pexels.com/photos/11477798/pexels-photo-11477798.jpeg');
             break;
         case '2': //Future City
-            background.setAttribute('src', 'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg');
+            background.setAttribute('src', 'https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg');
             break;
         case '3': //Gotham
             background.setAttribute('src', 'https://images.pexels.com/photos/1366957/pexels-photo-1366957.jpeg');
