@@ -30,14 +30,14 @@
         <div class="wave"></div>
     </div>
 
-    <div class="hero-sec" style="display: none;">
+    <div class="hero-sec" style="display: none; overflow: hidden;">
         <img class="darken" id="background-image" src=""></img>
         <header>
             <nav class="navBar animate__animated animate__slideInLeft">
                 {{#if logged_in}}
-                <a href="/" class="main-button">Main</a> |
-                <a href="/profile" class="profile-button">Profile</a> |
-                <button class="no-button" id="logout">Logout</button>
+                <a href="/" class="no-button">Main</a>
+                <a href="/profile" class="no-button">Profile</a>
+                <button class="no-button red" id="logout">Logout</button>
                 {{/if}}
             </nav>
             <h1 class="title_name animate__animated animate__slideInDown">

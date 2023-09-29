@@ -9,7 +9,8 @@
 
 {{!-- Shows first question --}}
 <div id="parentAnswer-container" style="display: none;">
-  <h2 class="main-question">Question: {{questions.[0].question}}</h2>
+  <h2 class="main-question">Question:</h2>
+  <h2 class="main-question"> {{questions.[0].question}}</h2>
   <ul class="answerChoices">
     {{#each questions.[0].answers}}
       <li style="display:inline-block;">

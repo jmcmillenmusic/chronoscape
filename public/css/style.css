@@ -97,19 +97,19 @@ body {
 
 .darken-cards {
   filter: brightness(0.7);
-  -webkit-transition: margin 0.5s ease-out;
-  -moz-transition: margin 0.5s ease-out;
-  -o-transition: margin 0.5s ease-out;
+  -webkit-transition: transform 0.7s ease;
+  -moz-transition: transform 0.7s ease;
+  -o-transition: transform 0.7s ease;
 }
 
 .darken-cards:hover{
   box-shadow: #000;
-  margin-top: 40px;
+  transform: scale(1.1);
 }
 
 header {
   position: absolute;
-  top: 10%;
+  top: 5%;
   right: 0;
   left: 0;
   margin: auto;
@@ -130,11 +130,12 @@ header {
 
 #background-image {
   display: block;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   filter: blur(10px);
   -webkit-filter: blur(10px);
+  transform: scale(1.1); 
+  overflow: hidden;
 }
 
 .title_name {
@@ -176,13 +177,12 @@ header {
 .card__inner3 {
   width: 100%;
   height: 100%;
-  transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
 }
 
-.card__inner.is-flipped {
+/* .card__inner.is-flipped {
   transform: rotateY(180deg);
 }
 
@@ -192,7 +192,7 @@ header {
 
 .card__inner3.is-flipped {
   transform: rotateY(180deg);
-}
+} */
 
 .card__face {
   /* position: absolute; */
@@ -251,7 +251,7 @@ header {
 
 .card__face--back {
   background-color: var(--light);
-  transform: rotateY(180deg);
+  /* transform: rotateY(180deg); */
 }
 
 .card__content {
@@ -286,6 +286,12 @@ header {
   align-items: center;
   text-decoration: none;
   padding-top: 150px;
+  text-decoration: none;
+}
+
+.login-button:hover {
+  text-decoration: none !important;
+  color: yellow !important;
 }
 
 .main-body {
@@ -345,27 +351,44 @@ header {
 }
 
 .navBar {
+display: flex;
+align-items: center;
+gap: 20px;
 padding-left: 32px;
-font-size: 20px;
+font-size: 15px;
 }
 
 .no-button {
-  padding: 15px 10px;
+  padding: 5px 10px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 7px;
   background: transparent;
   color: white;
 }
 
 .no-button:hover {
-  background-color: #1b89bc;
+  background-color: white;
+  color: black;
+}
+
+.red {
+  background-color: rgb(155, 0, 0);
+}
+
+.red:hover {
+  background-color: rgb(241, 0, 0);
 }
 
 .titleLocation {
   font-size: 32px;
+}
+
+.profile_ctn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .continue {
@@ -395,4 +418,10 @@ font-size: 20px;
 .ending {
   /* padding: 50px; */
   text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }

@@ -12,7 +12,7 @@ $(window).on('load', function() {
         headerSec.style.display = 'block';
         mainSec.style.display = 'block';
     }
-    setTimeout(complete, 3000)
+    setTimeout(complete, 1000)
 });
 
 // Switch/case to compare which question the player is on and set the background image source based on their location in the story

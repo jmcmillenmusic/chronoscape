@@ -3,10 +3,11 @@
 
 {{!-- Shows first quesiton --}}
 <div id="parentAnswer-container">
-  <h2 class="main-question">Question: {{questions.[4].question}}</h2>
+  <h2 class="main-question">Question:</h2>
+  <h2 class="main-question"> {{questions.[4].question}}</h2>
   <ul class="answerChoices">
     {{#each questions.[4].answers}}
-      <li class="parentAnswer">
+      <li class="parentAnswer" style="display: inline-block;">
         <Button class="card">
           <div class="content-container">
             <p>{{this.answerChoice}}</p>
